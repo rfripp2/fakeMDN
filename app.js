@@ -7,4 +7,3 @@ function fakeEvery(array, elements) {
   return true;
 }
 
-fakeEvery([12, 3, 98, 16], numbers => numbers < 99);
