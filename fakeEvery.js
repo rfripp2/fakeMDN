@@ -1,7 +1,10 @@
-function fakeEvery(valorLimite, arrEvery) {
-  return valorLimite < 40;
+function fakeEvery(array, elements) {
+  for (let i = 0; i < array.length; i++) {
+    if (elements(array[i]) != true) {
+      return false;
+    }
+  }
+  return true;
 }
 
-let arrEvery = [4, 10, 13, 18, 22, 17, 33];
-
-console.log(arrEvery.every(fakeEvery));
+fakeEvery([12, 3, 98, 16], numbers => numbers < 99);
