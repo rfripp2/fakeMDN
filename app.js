@@ -1,3 +1,14 @@
+//fakeEvery
+function fakeEvery(array, elements) {
+  for (let i = 0; i < array.length; i++) {
+    if (elements(array[i]) != true) {
+      return false;
+    }
+  }
+  return true;
+}
+
+
 //fakeIncludes function
 function fakeIncludes(arr, element) {
   for (let i = 0; i < arr.length; i++) {
@@ -15,6 +26,7 @@ function fakeForEach(arr, callback) {
     callback(arr[i]);
   }
 }
+
 
 
 
