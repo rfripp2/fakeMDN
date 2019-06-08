@@ -8,7 +8,6 @@ function fakeEvery(array, elements) {
   return true;
 }
 
-
 //fakeIncludes function
 function fakeIncludes(arr, element) {
   for (let i = 0; i < arr.length; i++) {
@@ -38,4 +37,15 @@ function fakeFilter(arr, callback) {
     }
   }
   return filtered;
+}
+
+// fakeSome function
+
+function fakeSome(arr, func) {
+  for (i = 0; i < arr.length; i++) {
+    if (func(arr[i]) === true) {
+      return true;
+    }
+  }
+  return false;
 }
