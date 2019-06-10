@@ -21,8 +21,8 @@ function fakeIncludes(arr, element) {
 // fakeForEach function
 
 function fakeForEach(arr, callback) {
-  for (let i = 0; i < arr.length; i++) {
-    callback(arr[i]);
+  for (let element of arr) {
+    callback(element);
   }
 }
 
