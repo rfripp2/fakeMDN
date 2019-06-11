@@ -61,7 +61,7 @@ function fakeFind(arr, callback) {
 
 // fakeIntersection function
 
-function intersection(arr1, arr2) {
+function fakeIntersection(arr1, arr2) {
   let intersectionArr = [];
   fakeForEach(arr2, element => {
     if (arr1.indexOf(element) >= 0) {
