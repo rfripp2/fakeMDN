@@ -48,3 +48,13 @@ function fakeSome(arr, func) {
   }
   return false;
 }
+
+// fakeFind function
+
+function fakeFind(arr, callback) {
+  for (let element of arr) {
+    if (callback(element)) {
+      return element;
+    }
+  }
+}
