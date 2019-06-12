@@ -1,11 +1,12 @@
 //fakeEvery
-function fakeEvery(array, elements) {
-  for (let i = 0; i < array.length; i++) {
-    if (elements(array[i]) != true) {
-      return false;
+function fakeEvery(arr, callback) {
+  let trusthyArr = [];
+  fakeForEach(arr, element => {
+    if (callback(element)) {
+      trusthyArr.push(element);
     }
-  }
-  return true;
+  });
+  return trusthyArr.length == arr.length;
 }
 
 //fakeIncludes function
