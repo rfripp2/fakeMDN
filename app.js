@@ -50,9 +50,6 @@ function fakeSome(arr, func) {
   return false;
 }
 
-
-
-
 // fakeFind function
 
 function fakeFind(arr, callback) {
@@ -73,7 +70,6 @@ function fakeIntersection(arr1, arr2) {
     }
   });
   return intersectionArr;
-
 }
 
 // fakeUnion function
@@ -87,4 +83,15 @@ function fakeUnion(arr1, arr2) {
     }
   });
   return unionArr;
+}
+
+// fakeIndexOf function (iterative)
+
+function fakeIndexOf(arr, element) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == element) {
+      return i;
+    }
+  }
+  return -1;
 }
