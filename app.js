@@ -1,11 +1,12 @@
 //fakeEvery
-function fakeEvery(array, elements) {
-  for (let i = 0; i < array.length; i++) {
-    if (elements(array[i]) != true) {
-      return false;
+function fakeEvery(arr, callback) {
+  let trusthyArr = [];
+  fakeForEach(arr, element => {
+    if (callback(element)) {
+      trusthyArr.push(element);
     }
-  }
-  return true;
+  });
+  return trusthyArr.length == arr.length;
 }
 
 //fakeIncludes function
@@ -30,12 +31,11 @@ function fakeForEach(arr, callback) {
 
 function fakeFilter(arr, callback) {
   let filtered = [];
-  for (let i = 0; i < arr.length; i++) {
-    let result = callback(arr[i]);
-    if (result) {
-      filtered.push(arr[i]);
+  fakeForEach(arr, element => {
+    if (callback(element)) {
+      filtered.push(element);
     }
-  }
+  });
   return filtered;
 }
 
@@ -50,6 +50,32 @@ function fakeSome(arr, func) {
   return false;
 }
 
+
+
+
+// fakeFind function
+
+function fakeFind(arr, callback) {
+  for (let element of arr) {
+    if (callback(element)) {
+      return element;
+    }
+  }
+}
+
+// fakeIntersection function
+
+function fakeIntersection(arr1, arr2) {
+  let intersectionArr = [];
+  fakeForEach(arr2, element => {
+    if (arr1.indexOf(element) >= 0) {
+      intersectionArr.push(element);
+    }
+  });
+  return intersectionArr;
+
+}
+
 // fakeUnion function
 
 function fakeUnion(arr1, arr2) {
@@ -61,4 +87,3 @@ function fakeUnion(arr1, arr2) {
     }
   });
   return unionArr;
-}
