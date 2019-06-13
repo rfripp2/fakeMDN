@@ -50,16 +50,6 @@ function fakeSome(arr, func) {
   return false;
 }
 
-// fakeReduce function
-
-function fakeReduce(arr, callback, initial) {
-  let accumulator = initial || 0;
-  fakeForEach(arr, element => {
-    accumulator = callback(accumulator, element);
-  });
-  return accumulator;
-}
-
 // fakeFind function
 
 function fakeFind(arr, callback) {
@@ -93,4 +83,14 @@ function fakeUnion(arr1, arr2) {
     }
   });
   return unionArr;
+}
+
+// fakeReduce function
+
+function fakeReduce(arr, callback, initial) {
+  let accumulator = initial || 0;
+  fakeForEach(arr, element => {
+    accumulator = callback(accumulator, element);
+  });
+  return accumulator;
 }
