@@ -11,10 +11,9 @@ function fakeEvery(arr, callback) {
 
 //fakeIncludes function
 function fakeIncludes(arr, element) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == element) {
-      return true;
-    }
+  let indexed = fakeIndexOf(arr, element);
+  if (indexed > -1) {
+    return true;
   }
   return false;
 }
