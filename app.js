@@ -50,9 +50,6 @@ function fakeSome(arr, func) {
   return false;
 }
 
-
-
-
 // fakeFind function
 
 function fakeFind(arr, callback) {
@@ -73,7 +70,6 @@ function fakeIntersection(arr1, arr2) {
     }
   });
   return intersectionArr;
-
 }
 
 // fakeUnion function
@@ -87,4 +83,17 @@ function fakeUnion(arr1, arr2) {
     }
   });
   return unionArr;
+}
+
+// fakeSum function
+
+function fakeSum(arr) {
+  let total = fakeReduce(
+    arr,
+    function(a, b) {
+      return a + b;
+    },
+    0
+  );
+  return total;
 }
