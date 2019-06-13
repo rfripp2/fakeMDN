@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fake MDN</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../app.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"
+    ></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/atom-one-light.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="../index.html">Inicio</a>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h1>fakeFind function</h1>
+        <p>
+          La funcion fakeFind retorna el valor del primer elemento que pase el
+          test de la funcion que se ejecute.
+        </p>
+        <h2>Demo</h2>
+        <pre><code>fakeFind([3, 65, 100, 1000], item => item > 50);
+            <br>// 65
+        </code></pre>
+      </section>
+      <hr />
+      <section>
+        <h2>Sintaxis</h2>
+        <pre><code>fakeFind(array,callback(currentValue));</code></pre>
+        <h2>Parámetros</h2>
+        <h4>array</h4>
+        <p>El array que la funcion recorrera</p>
+        <h4>callback</h4>
+        <p>La funcion que se ejecutara para cada item del array.</p>
+        <h4>Parametro 3</h4>
+        <ul>
+          <li>
+            <p><em> currentValue</em></p>
+          </li>
+          <p>Cada item del array que sera procesado por la funcion callback.</p>
+        </ul>
+        <h2>Valor que retorna</h2>
+        <p>
+          El valor del primer elemento que pase el test de la funcion provista.
+        </p>
+        <h2>Descripcion</h2>
+        <p>
+          fakeFind llama a la funcion callback,que se ejecutara para cada
+          elemento hasta que la funcion retorne true,y retornara el valor de
+          dicho elemento.
+          <br />Si ningun elemento pasa el test, retornara undefined.
+        </p>
+      </section>
+      <hr />
+      <section>
+        <h3>Ejemplos</h3>
+        <h4>
+          Retorna el primer item con longuitud > 25 characteres que encuentra en
+          el array.
+        </h4>
+        <pre><code>
+            let carreraDeCharacteres = [
+            "tengo algunos caracteres",
+            "yo no",
+            "yo tendre mas de 20?!!! espero ser el primero que pasa el test",
+            "yo seguro tengo mas que 20 ,pero capaz ya me ganaron"
+          ];
+            fakeFind(carreraDeCharacteres,item => item.length > 25);
+              <br>//"yo tendre mas de 20?!!! espero ser el primero que pasa el test"
+       </code></pre>
+      </section>
+    </main>
+    <hr />
+    <footer>
+      <h3>Ver tambien</h3>
+      <ul>
+        <li><a href="fakeForEach.html">fakeFind</a></li>
+        <li><a href="fakeSome.html">fakeSome</a></li>
+        <li><a href="fakeEvery.html">fakeEvery</a></li>
+        <li><a href="fakeIncludes.html">fakeIncludes</a></li>
+        <li><a href="fakeMap.html">fakeMap</a></li>
+        <li><a href="fakeFilter.html">fakeFilter</a></li>
+        <li><a href="fakeReduce.html">fakeReduce</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
