@@ -87,3 +87,4 @@ function fakeUnion(arr1, arr2) {
     }
   });
   return unionArr;
+}
