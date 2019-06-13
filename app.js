@@ -49,3 +49,16 @@ function fakeSome(arr, func) {
   }
   return false;
 }
+
+// fakeUnion function
+
+function fakeUnion(arr1, arr2) {
+  let unionArr = [];
+  let intersectionArr = fakeIntersection(arr1, arr2);
+  fakeForEach(intersectionArr, element => {
+    if (unionArr.indexOf(element) == -1) {
+      unionArr.push(element);
+    }
+  });
+  return unionArr;
+}
