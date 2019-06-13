@@ -50,8 +50,15 @@ function fakeSome(arr, func) {
   return false;
 }
 
+// fakeReduce function
 
-
+function fakeReduce(arr, callback, initial) {
+  let accumulator = initial || 0;
+  fakeForEach(arr, element => {
+    accumulator = callback(accumulator, element);
+  });
+  return accumulator;
+}
 
 // fakeFind function
 
@@ -73,7 +80,6 @@ function fakeIntersection(arr1, arr2) {
     }
   });
   return intersectionArr;
-
 }
 
 // fakeUnion function
