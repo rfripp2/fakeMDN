@@ -41,17 +41,13 @@ function fakeFilter(arr, callback) {
 
 // fakeSome function
 
-function fakeSome(arr, func) {
-  for (i = 0; i < arr.length; i++) {
-    if (func(arr[i]) === true) {
-      return true;
-    }
+function fakeSome(arr, callback) {
+  let filteredS = fakeFilter(arr, callback);
+  if (filteredS.length > 0) {
+    return true;
   }
   return false;
 }
-
-
-
 
 // fakeFind function
 
@@ -73,7 +69,6 @@ function fakeIntersection(arr1, arr2) {
     }
   });
   return intersectionArr;
-
 }
 
 // fakeUnion function
