@@ -93,3 +93,12 @@ function fakeIndexOf(arr, element) {
   }
   return -1;
 }
+
+//fakeMap function
+function fakeMap(array, callback) {
+  const arrayMapped = [];
+  fakeForEach(array, element => {
+    arrayMapped.push(callback(element));
+  });
+  return arrayMapped;
+}
