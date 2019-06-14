@@ -58,6 +58,17 @@ function fakeFind(arr, callback) {
   }
 }
 
+//function fakeMap()
+
+function fakeMap(array, callback) {
+  const arrayMapped = [];
+  fakeForEach(array, element => {
+    arrayMapped.push(callback(element));
+  });
+  return arrayMapped;
+}
+
+
 // fakeIntersection function
 
 function fakeIntersection(arr1, arr2) {
