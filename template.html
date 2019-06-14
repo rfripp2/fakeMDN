@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>fakeEvery</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../app.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"
+    ></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/atom-one-light.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 class="title">fakeTemplate</h1>
+    </header>
+    <section class="principal">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, et
+        voluptatem suscipit eveniet doloremque, totam tempora ut eligendi sunt
+        assumenda nostrum ratione excepturi sequi omnis, accusantium tenetur
+        nobis praesentium. Ipsa!
+      </p>
+      <pre>
+          <code>function fakeMap(array, callback) {
+        const arrayMapped = [];
+        fakeForEach(array, element => {
+          arrayMapped.push(callback(element));
+        });
+        return arrayMapped;
+      }
+           </code>
+        </pre>
+    </section>
+    <section class="sintaxis">
+      <h2 class="subtitle">Sintaxis</h2>
+      <p>fakeEvery(array,callback(elemento))</p>
+      <dl>
+        <dt>Parámetros</dt>
+        <dd>array</dd>
+        <dd>El array que la funcion recorrera</dd>
+      </dl>
+      <dl>
+        <dt>callback</dt>
+        <dd>La funcion que se ejecutara para cada elemento del array</dd>
+        <dd>
+          <ul>
+            <li><p>elemento</p></li>
+          </ul>
+        </dd>
+        <dd>El elemento que sera procesado por la funcion callback</dd>
+      </dl>
+      <h2 class="subtitle">Descripcion</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+        maxime harum dicta error, blanditiis neque quisquam ratione. Quos ipsum
+        nesciunt quidem odit et aperiam suscipit, corporis ea repellat, pariatur
+        magni.
+      </p>
+    </section>
+    <section class="examples">
+      <h2 class="subtitle">Ejemplos</h2>
+      <p>Evaluar si los numeros del array cumplen con la condición</p>
+      <pre><code></code></pre>
+      <p>Evaluar si los valores del array cumplen con la condición</p>
+      <pre><code></code></pre>
+    </section>
+    <article class="leftNav">
+      <h3 class="leftTitle">Ver tambien</h3>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="fakeForEach.html">fakeForEach</a></li>
+        <li><a href="fakeSome.html">fakeSome</a></li>
+        <li><a href="fakeMap.html">fakeMap</a></li>
+        <li><a href="fakeFind.html">fakeFind</a></li>
+        <li><a href="fakeIncludes.html">fakeIncludes</a></li>
+        <li><a href="fakeFilter.html">fakeFilter</a></li>
+        <li><a href="fakeReduce.html">fakeReduce</a></li>
+      </ul>
+    </article>
+  </body>
+</html>
