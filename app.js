@@ -107,6 +107,16 @@ function fakeIndexOf(arr, element) {
   return -1;
 }
 
+
+// fakeReduce function
+
+function fakeReduce(arr, callback, initial) {
+  let accumulator = initial || 0;
+  fakeForEach(arr, element => {
+    accumulator = callback(accumulator, element);
+  });
+  return accumulator;
+
 // fakeSum function
 
 function fakeSum(arr) {
@@ -118,3 +128,4 @@ function fakeSum(arr) {
     0
   );
   return total;
+
