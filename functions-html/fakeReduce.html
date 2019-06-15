@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>fakeEvery</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../app.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"
+    ></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/dracula.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inconsolata:700|Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header" class="header">
+      <h1 class="title">Funcion fakeReduce()</h1>
+    </header>
+    <nav class="nav-bar">
+      <h3 class="leftTitle">Ver tambien</h3>
+      <ul class="list-function">
+        <li class="list-item">
+          <a href="../index.html" class="link-item">Inicio</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeForEach.html" class="link-item">fakeForEach</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeSome.html" class="link-item">fakeSome</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeEvery.html" class="link-item">fakeEvery</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeFind.html" class="link-item">fakeFind</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIncludes.html" class="link-item">fakeIncludes</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeMap.html" class="link-item">fakeMap</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeFilter.html" class="link-item">fakeFilter</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIndexOf.html" class="link-item">fakeIndexOf</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIndexOfRecursive.html" class="link-item"
+            >fakeIndexOfRecursive</a
+          >
+        </li>
+        <li class="list-item">
+          <a href="fakeIntersection.html" class="link-item">fakeIntersection</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeUnion.html" class="link-item">fakeUnion</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeSum.html" class="link-item">fakeSum</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <section class="principal">
+        <p>
+          La función reduce() aplica una función a un acumulador y a cada valor
+          de un array (de izquierda a derecha) para reducirlo a un único valor.
+        </p>
+        <h2 class="subtitle">Demo</h2>
+        <pre>
+          <code>
+            var numbers = [0, 1, 2, 3]
+            function sum(a, b){ 
+                return a + b; 
+            }
+            fakeReduce(numbers, sum);
+            // total == 6
+           </code>
+        </pre>
+      </section>
+      <section class="sintaxis">
+        <h2 class="subtitle">Sintaxis</h2>
+        <p>fakeReduce(array, callback(elemento))</p>
+        <dl>
+          <dt>Parámetros</dt>
+          <dd>array</dd>
+          <dd>El array que la función recorrera.</dd>
+        </dl>
+        <dl>
+          <dt>callback</dt>
+          <dd>La función que se ejecutara para cada elemento del array.</dd>
+          <dd>
+            <ul>
+              <li><p>elemento</p></li>
+            </ul>
+          </dd>
+          <dd>El elemento que sera procesado por la función callback.</dd>
+        </dl>
+        <h2 class="subtitle">Descripción</h2>
+        <p>
+          fakeReduce ejecuta la función una vez por cada elemento presente en el
+          array, excluyendo los huecos del mismo.
+        </p>
+      </section>
+      <section class="examples">
+        <h2 class="subtitle">Ejemplos</h2>
+        <p>Acumular cuadrados</p>
+        <pre>
+            <code>
+                var array1 = [1, 2, 3, 4];
+                function square(a, b){ 
+                    return (a * a) + (b * b); 
+                  }
+                fakeReduce(array1, square);
+                // total == 30
+            </code>
+        </pre>
+        <p>Evaluar si los valores del array cumplen con la condición</p>
+        <pre>
+            <code>
+                var integrado = [[0,1], [2,3], [4,5]]
+                function concatenar(a,b){
+                    return a.concat(b);
+                }
+                fakeReduce(integrado, concatenar);
+                // integrado es [0, 1, 2, 3, 4, 5]
+            </code>
+        </pre>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="copyright">
+        Copyright 2019 | fakeTeam | Todos los derechos reservados
+      </p>
+      <a href="#header">Volver al inicio</a>
+    </footer>
+  </body>
+</html>
