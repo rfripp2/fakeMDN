@@ -128,6 +128,7 @@ function fakeReduce(arr, callback, initial) {
     accumulator = callback(accumulator, element);
   });
   return accumulator;
+}
 
 // fakeSum function
 
@@ -140,5 +141,6 @@ function fakeSum(arr) {
     0
   );
   return total;
+}
 
 
