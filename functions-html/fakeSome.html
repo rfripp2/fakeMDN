@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>fakeEvery</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../app.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"
+    ></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/dracula.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inconsolata:700|Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header" class="header">
+      <h1 class="title">Funcion fakeSome()</h1>
+    </header>
+    <nav class="nav-bar">
+      <h3 class="leftTitle">Ver tambien</h3>
+      <ul class="list-function">
+        <li class="list-item">
+          <a href="../index.html" class="link-item">Inicio</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeForEach.html" class="link-item">fakeForEach</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeEvery.html" class="link-item">fakeEvery</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeFind.html" class="link-item">fakeFind</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIncludes.html" class="link-item">fakeIncludes</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeMap.html" class="link-item">fakeMap</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeFilter.html" class="link-item">fakeFilter</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeReduce.html" class="link-item">fakeReduce</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIndexOf.html" class="link-item">fakeIndexOf</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIndexOfRecursive.html" class="link-item"
+            >fakeIndexOfRecursive</a
+          >
+        </li>
+        <li class="list-item">
+          <a href="fakeIntersection.html" class="link-item">fakeIntersection</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeUnion.html" class="link-item">fakeUnion</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeSum.html" class="link-item">fakeSum</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <section class="principal">
+        <p>
+          La función some() comprueba si al menos un elemento del array cumple
+          con la condición implementada por la función proporcionada.
+        </p>
+        <h2 class="subtitle">Demo</h2>
+        <pre>
+          <code>
+                var array = [1, 2, 3, 4, 5];
+
+                var even = function(element) {
+                  // checks whether an element is even
+                  return element % 2 === 0;
+                };
+                
+                console.log(fakeSome(array, even));
+                // expected output: true
+           </code>
+        </pre>
+      </section>
+      <section class="sintaxis">
+        <h2 class="subtitle">Sintaxis</h2>
+        <p>fakeEvery(array,callback(elemento))</p>
+        <dl>
+          <dt>Parámetros</dt>
+          <dd>array</dd>
+          <dd>El array que la funcion recorrera</dd>
+        </dl>
+        <dl>
+          <dt>callback</dt>
+          <dd>Función que verifica cada elemento</dd>
+          <dd>
+            <ul>
+              <li><p>elemento</p></li>
+            </ul>
+          </dd>
+          <dd>El elemento actual siendo procesado en el array.</dd>
+        </dl>
+        <h2 class="subtitle">Descripcion</h2>
+        <p>
+          some() ejecuta la función callback una vez por cada elemento presente
+          en el array hasta que encuentre uno donde callback retorna un valor
+          verdadero (true). Si se encuentra dicho elemento, some() retorna true
+          inmediatamente. Si no, some() retorna false.
+        </p>
+        <p>
+          callback es invocada sólo para los índices del array que tienen
+          valores asignados; no es invocada para índices que han sido borrados o
+          a los que nunca se les han asignado valores. some() no modifica el
+          array con el cual fue llamada.
+        </p>
+        <p>
+          El rango de elementos procesados por some() es configurado antes de la
+          primera invocación de callback. Los elementos anexados al array luego
+          de que comience la llamada a some() no serán visitados por callback.
+          Si un elemento existente y no visitado del array es alterado por
+          callback, su valor pasado al callback será el valor al momento que
+          some() visita el índice del elemento; los elementos borrados no son
+          visitados.
+        </p>
+      </section>
+      <section class="examples">
+        <h2 class="subtitle">Ejemplos</h2>
+        <p>
+          El siguiente ejemplo verifica si algún elemento del array es mayor a
+          10.
+        </p>
+        <pre><code>
+                function isBiggerThan10(element, index, array) {
+                    return element > 10;
+                  }
+                var numbers = [2, 5, 8, 1, 4];
+                fakeSome(numbers, isBiggerThan10);  // false
+                var numbers2 = [12, 5, 8, 1, 4];
+                fakeSome(numbers2, isBiggerThan10); // true
+            </code>
+        </pre>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="copyright">
+        Copyright 2019 | fakeTeam | Todos los derechos reservados
+      </p>
+      <a href="#header">Volver al inicio</a>
+    </footer>
+  </body>
+</html>
