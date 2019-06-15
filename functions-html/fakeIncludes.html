@@ -4,56 +4,137 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Fake MDN</title>
+    <title>fakeEvery</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="../app.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"
+    ></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/dracula.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inconsolata:700|Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
   </head>
-<body>
-  <header>
-    <nav>
-      <a href="../index.html">Inicio</a>
+  <body>
+    <header id="header" class="header">
+      <h1 class="title">Funcion fakeIncludes()</h1>
+    </header>
+    <nav class="nav-bar">
+      <h3 class="leftTitle">Ver tambien</h3>
+      <ul class="list-function">
+        <li class="list-item">
+          <a href="../index.html" class="link-item">Inicio</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeForEach.html" class="link-item">fakeForEach</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeSome.html" class="link-item">fakeSome</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeEvery.html" class="link-item">fakeEvery</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeFind.html" class="link-item">fakeFind</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeMap.html" class="link-item">fakeMap</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeFilter.html" class="link-item">fakeFilter</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeReduce.html" class="link-item">fakeReduce</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIndexOf.html" class="link-item">fakeIndexOf</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIndexOfRecursive.html" class="link-item"
+            >fakeIndexOfRecursive</a
+          >
+        </li>
+        <li class="list-item">
+          <a href="fakeIntersection.html" class="link-item">fakeIntersection</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeUnion.html" class="link-item">fakeUnion</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeSum.html" class="link-item">fakeSum</a>
+        </li>
+      </ul>
     </nav>
-  </header>
-  <main>
-    <section>
-      <h1>FakeIncludes function</h1>
-      <p>
-        La función includes() determina si una matriz incluye un determinado elemento, devuelve true o false según corresponda. Utiliza el algoritmo sameValueZero para determinar si se encuentra el elemento dado.
+
+    <main class="content">
+      <section class="principal">
+        <p>
+          La función includes() determina si una matriz incluye un determinado
+          elemento, devuelve true o false según corresponda. Utiliza el
+          algoritmo sameValueZero para determinar si se encuentra el elemento
+          dado.
+        </p>
+        <h2 class="subtitle">Demo</h2>
+        <pre>
+          <code>
+                var array1 = [1, 2, 3];
+
+                console.log(fakeIncludes(array1, 2));
+                // expected output: true
+
+                var pets = ['cat', 'dog', 'bat'];
+
+                console.log(fakeIncludes(pets,'cat'));
+                // expected output: true
+
+                console.log(fakeIncludes(pets,'at'));
+                // expected output: false
+           </code>
+        </pre>
+      </section>
+      <section class="sintaxis">
+        <h2 class="subtitle">Sintaxis</h2>
+        <p>fakeIncludes(array, searchElement</p>
+        <dl>
+          <dt>Parámetros</dt>
+          <dd>array</dd>
+          <dd>El array que la funcion recorrera</dd>
+        </dl>
+        <dl>
+          <dt>searchElement</dt>
+          <dd>El elemento a buscar.</dd>
+        </dl>
+      </section>
+      <section class="examples">
+        <h2 class="subtitle">Ejemplos</h2>
+        <p>Evaluar si los numeros del array cumplen con la condición</p>
+        <pre>
+            <code>
+                var numbers = [1, 2, 3];
+                fakeIncludes(numbers, 2);     // true
+                fakeIncludes(numbers, 4);     // false
+                fakeIncludes(numbers, (3, 3));  // false
+                fakeIncludes(numbers, (3, -1)); // true
+                
+                var nanarray = [1, 2, NaN];
+                fakeIncludes(nanarray, NaN); // true
+            </code>
+        </pre>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="copyright">
+        Copyright 2019 | fakeTeam | Todos los derechos reservados
       </p>
-      <h2>Demo</h2>
-      <img src="images/demoIncludes.png" alt="fakeIncludes demo" />
-    </section>
-    <hr />
-    <section>
-      <h2>Sintaxis</h2>
-      <p>fakeIncludes(array,element);</p>
-      <h3>Parámetros</h3>
-      <h4>array</h4>
-      <p>El array que la funcion recorrera</p>
-      <h4>element</h4>
-      <p>El elemento a buscar</p>
-      <h4>valor de retorno</h4>
-      <p>Bool: true o false</p>
-    </section>
-    <hr />
-    <section>
-      <h3>Ejemplos</h3>
-      <h4>
-        Con Char
-      </h4>
-      <img src="images/exampleIncludes.png" alt="ejemplo Char" />
-    </section>
-  </main>
-  <hr />
-  <footer>
-    <h3>Ver tambien</h3>
-    <ul>
-      <li><a href="fakeSome.html">fakeSome</a></li>
-      <li><a href="fakeEvery.html">fakeEvery</a></li>
-      <li><a href="fakeMap.html">fakeMap</a></li>
-      <li><a href="fakeFind.html">fakeFind</a></li>
-      <li><a href="fakeFilter.html">fakeFilter</a></li>
-      <li><a href="fakeForEach.html">fakeForEach</a></li>
-    </ul>
-  </footer>
-</body>
+      <a href="#header">Volver al inicio</a>
+    </footer>
+  </body>
+</html>
