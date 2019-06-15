@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>fakeIntersection</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../app.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"
+    ></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/dracula.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inconsolata:700|Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header" class="header">
+      <h1 class="title">fakeIntersection()</h1>
+    </header>
+    <nav class="nav-bar">
+      <h3 class="leftTitle">Ver tambien</h3>
+      <ul class="list-function">
+        <li class="list-item">
+          <a href="../index.html" class="link-item">Inicio</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeForEach.html" class="link-item">fakeForEach</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeSome.html" class="link-item">fakeSome</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeEvery.html" class="link-item">fakeEvery</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeFind.html" class="link-item">fakeFind</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIncludes.html" class="link-item">fakeIncludes</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeMap.html" class="link-item">fakeMap</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeFilter.html" class="link-item">fakeFilter</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeReduce.html" class="link-item">fakeReduce</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIndexOf.html" class="link-item">fakeIndexOf</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIndexOfRecursive.html" class="link-item"
+            >fakeIndexOfRecursive</a
+          >
+        </li>
+        <li class="list-item">
+          <a href="fakeUnion.html" class="link-item">fakeUnion</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeSum.html" class="link-item">fakeSum</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <section class="principal">
+        <p>
+          fakeIntersection crea un nuevo array,solo con valores que esten
+          incluidos en los 2 arrays que se evaluen. El orden del resultado lo
+          determina el primer array. Se uitliza la regla de
+          <a
+            href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero"
+            >SameValueZero</a
+          >
+          para la comparacion.
+        </p>
+        <h2 class="subtitle">Demo</h2>
+        <pre>
+          <code>
+                intersection([1, +3, 5, 7], [3, 3, 4, 6, 7]);
+                // [3,3,7];
+           </code>
+        </pre>
+      </section>
+      <section class="sintaxis">
+        <h2 class="subtitle">Sintaxis</h2>
+        <p>fakeIntersection(arr1,arr2);</p>
+        <dl>
+          <dt>Parámetros</dt>
+          <dd>arr1</dd>
+          <dd>El primer array,el cual determinara el orden del resultado.</dd>
+        </dl>
+        <dl>
+          <dt>arr2</dt>
+          <dd>El segundo array</dd>
+        </dl>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="copyright">
+        Copyright 2019 fakeTeam | Todos los derechos reservados
+      </p>
+      <a href="#header">Volver al inicio</a>
+    </footer>
+  </body>
+</html>
