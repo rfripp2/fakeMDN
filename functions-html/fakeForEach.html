@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Fake MDN</title>
+    <title>fakeForEach</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="../app.js"></script>
     <script
@@ -16,47 +16,78 @@
     </script>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/atom-one-light.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/dracula.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inconsolata:700|Press+Start+2P&display=swap"
+      rel="stylesheet"
     />
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="../index.html">Inicio</a>
-      </nav>
+    <header id="header" class="header">
+      <h1 class="title">fakeForEach()</h1>
     </header>
-    <main>
-      <section>
-        <h1>FakeForeach function</h1>
+    <nav class="nav-bar">
+      <h3 class="leftTitle">Ver tambien</h3>
+      <ul class="list-function">
+        <li class="list-item">
+          <a href="../index.html" class="link-item">Inicio</a>
+        </li>
+
+        <li class="list-item">
+          <a href="fakeSome.html" class="link-item">fakeSome</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeMap.html" class="link-item">fakeMap</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeFind.html" class="link-item">fakeFind</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIncludes.html" class="link-item">fakeIncludes</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeFilter.html" class="link-item">fakeFilter</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeReduce.html" class="link-item">fakeReduce</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="content">
+      <section class="principal">
         <p>
           La funcion fakeForEach ejecuta una funcion para cada elemento de un
           array
         </p>
-        <h2>Demo</h2>
-        <pre><code>let numbers = [1,2,3];
-        <br> fakeForEach(numbers,element => console.log(elements);
-        <br>//1
-        <br>//2
-        <br>//3
-        </code></pre>
+        <pre>
+          <code>
+            fakeForEach(numbers,element => console.log(elements));
+            <br>//1
+            <br>//2
+            <br>//3
+           </code>
+        </pre>
       </section>
-      <hr />
-      <section>
-        <h2>Sintaxis</h2>
-        <pre><code>fakeForEach(array,callback(currentValue));</code></pre>
-        <h3>Parámetros</h3>
-        <h4>array</h4>
-        <p>El array que la funcion recorrera</p>
-        <h4>callback</h4>
-        <p>La funcion que se ejecutara para cada item del array</p>
-        <h4>Parametro 3</h4>
-        <ul>
-          <li>
-            <p><em> currentValue</em></p>
-          </li>
-          <p>Cada item del array que sera procesado por la funcion callback</p>
-        </ul>
-        <h2>Descripcion</h2>
+      <section class="sintaxis">
+        <h2 class="subtitle">Sintaxis</h2>
+        <p>fakeForEach(array,callback(elemento))</p>
+        <dl>
+          <dt>Parámetros</dt>
+          <dd>array</dd>
+          <dd>El array que la funcion recorrera</dd>
+        </dl>
+        <dl>
+          <dt>callback</dt>
+          <dd>La funcion que se ejecutara para cada elemento del array</dd>
+          <dd>
+            <ul>
+              <li><p>elemento</p></li>
+            </ul>
+          </dd>
+          <dd>El elemento que sera procesado por la funcion callback</dd>
+        </dl>
+        <h2 class="subtitle">Descripcion</h2>
         <p>
           fakeForEach llama a la funcion callback, que sera ejecutada para cada
           elemento del array que pasemos como primer parametro. fakeForEach no
@@ -64,48 +95,26 @@
           queremos retornar algun valor en algun binding.
         </p>
       </section>
-      <hr />
-      <section>
-        <h3>Ejemplos</h3>
-        <h4>
-          Confirmar que no muta el array.
-        </h4>
-        <pre><code>
-         let numbers = [1,2,3];
-         <br>fakeForEach(numbers,element => {
-           element *= 2;
-           console.log(element);
-         });
-         <br>// 2
-         <br>// 4
-         <br>// 6
-        <br>console.log(numbers);
-        <br>// [1,2,3];
-        
-       </code></pre>
-
-        <h4>Insertar cada elemento a otro array</h4>
-        <pre><code>
-          let lowNumbers = [3,2,1];
-          <br> let numbers = [4,5,6];
-          <br> fakeForEach(lowNumbers,element => numbers.unshift(element));
-          <br>console.log(numbers);
-          <br>//[1,2,3,4,5,6];
-        </code></pre>
+      <section class="examples">
+        <h2 class="subtitle">Ejemplos</h2>
+        <p>Confirmar que no muta el array.</p>
+        <pre><code>let numbers = [1,2,3];
+            <br>fakeForEach(numbers,element => {
+              element *= 2;
+              console.log(element);
+            });
+            <br>// 2
+            <br>// 4
+            <br>// 6
+           <br>console.log(numbers);
+           <br>// [1,2,3];</code></pre>
       </section>
     </main>
-    <hr />
-    <footer>
-      <h3>Ver tambien</h3>
-      <ul>
-        <li><a href="fakeSome.html">fakeSome</a></li>
-        <li><a href="fakeEvery.html">fakeEvery</a></li>
-        <li><a href="fakeMap.html">fakeMap</a></li>
-        <li><a href="fakeFind.html">fakeFind</a></li>
-        <li><a href="fakeIncludes.html">fakeIncludes</a></li>
-        <li><a href="fakeFilter.html">fakeFilter</a></li>
-        <li><a href="fakeReduce.html">fakeReduce</a></li>
-      </ul>
+    <footer class="footer">
+      <p class="copyright">
+        Copyright 2019 MegaNews | Todos los derechos reservados
+      </p>
+      <a href="#header">Volver al inicio</a>
     </footer>
   </body>
 </html>
