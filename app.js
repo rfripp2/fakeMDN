@@ -1,4 +1,5 @@
 //fakeEvery
+
 function fakeEvery(arr, callback) {
   let trusthyArr = [];
   fakeForEach(arr, element => {
@@ -10,6 +11,7 @@ function fakeEvery(arr, callback) {
 }
 
 //fakeIncludes function
+
 function fakeIncludes(arr, element) {
   let indexed = fakeIndexOf(arr, element);
   if (indexed > -1) {
@@ -104,3 +106,15 @@ function fakeIndexOf(arr, element) {
   }
   return -1;
 }
+
+// fakeSum function
+
+function fakeSum(arr) {
+  let total = fakeReduce(
+    arr,
+    function(a, b) {
+      return a + b;
+    },
+    0
+  );
+  return total;
