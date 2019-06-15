@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,16 +31,13 @@
       <h3 class="leftTitle">Ver tambien</h3>
       <ul class="list-function">
         <li class="list-item">
-          <a href="index.html" class="link-item">Inicio</a>
+          <a href="../index.html" class="link-item">Inicio</a>
         </li>
         <li class="list-item">
           <a href="fakeForEach.html" class="link-item">fakeForEach</a>
         </li>
         <li class="list-item">
           <a href="fakeSome.html" class="link-item">fakeSome</a>
-        </li>
-        <li class="list-item">
-          <a href="fakeEvery.html" class="link-item">fakeEvery</a>
         </li>
         <li class="list-item">
           <a href="fakeFind.html" class="link-item">fakeFind</a>
@@ -87,13 +84,15 @@
         <h2 class="subtitle">Demo</h2>
         <pre>
           <code>
-                function fakeMap(array, callback) {
-                    const arrayMapped = [];
-                    fakeForEach(array, element => {
-                    arrayMapped.push(callback(element));
-                    });
-                    return arrayMapped;
+            function fakeEvery(arr, callback) {
+              let trusthyArr = [];
+              fakeForEach(arr, element => {
+                if (callback(element)) {
+                  trusthyArr.push(element);
                 }
+              });
+              return trusthyArr.length == arr.length;
+            }
            </code>
         </pre>
       </section>
@@ -117,10 +116,15 @@
         </dl>
         <h2 class="subtitle">Descripcion</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-          maxime harum dicta error, blanditiis neque quisquam ratione. Quos
-          ipsum nesciunt quidem odit et aperiam suscipit, corporis ea repellat,
-          pariatur magni.
+          El método fakeEvery ejecuta la función callback dada una vez por cada
+          elemento presente en el arreglo hasta encontrar uno que haga retornar
+          un valor falso a callback (un valor que resulte falso cuando se
+          convierta a booleano). Si no se encuentra tal elemento, el método
+          every de inmediato retorna <b>false</b>. O si callback retorna
+          <b>true</b>verdadero para todos los elementos, every retornará true.
+          callback es llamada sólo para índices del arreglo que tengan valores
+          asignados; no se llama para índices que hayan sido eliminados o a los
+          que no se les haya asignado un valor.
         </p>
       </section>
       <section class="examples">
