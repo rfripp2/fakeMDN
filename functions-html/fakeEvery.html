@@ -7,68 +7,135 @@
     <title>fakeEvery</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="../app.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"
+    ></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/dracula.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inconsolata:700|Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="../index.html">Inicio</a>
-      </nav>
+    <header id="header" class="header">
+      <h1 class="title">fakeEvery()</h1>
     </header>
-    <main>
-      <section>
+    <nav class="nav-bar">
+      <h3 class="leftTitle">Ver tambien</h3>
+      <ul class="list-function">
+        <li class="list-item">
+          <a href="index.html" class="link-item">Inicio</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeForEach.html" class="link-item">fakeForEach</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeSome.html" class="link-item">fakeSome</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeEvery.html" class="link-item">fakeEvery</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeFind.html" class="link-item">fakeFind</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIncludes.html" class="link-item">fakeIncludes</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeMap.html" class="link-item">fakeMap</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeFilter.html" class="link-item">fakeFilter</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeReduce.html" class="link-item">fakeReduce</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIndexOf.html" class="link-item">fakeIndexOf</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIndexOfRecursive.html" class="link-item"
+            >fakeIndexOfRecursive</a
+          >
+        </li>
+        <li class="list-item">
+          <a href="fakeIntersection.html" class="link-item">fakeIntersection</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeUnion.html" class="link-item">fakeUnion</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeSum.html" class="link-item">fakeSum</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="content">
+      <section class="principal">
         <h1>Funcion fakeEvery()</h1>
         <p>
           El método fakeEvery() prueba si todos los elementos del array pasan la
           prueba implementada por la función proporcionada. Devuelve un valor
           booleano.
         </p>
-        <img src="images/fakeEveryPrincipal.PNG" alt="demo" />
+        <h2 class="subtitle">Demo</h2>
+        <pre>
+          <code>
+                function fakeMap(array, callback) {
+                    const arrayMapped = [];
+                    fakeForEach(array, element => {
+                    arrayMapped.push(callback(element));
+                    });
+                    return arrayMapped;
+                }
+           </code>
+        </pre>
       </section>
-      <hr />
-      <section>
-        <h2>Sintaxis</h2>
+      <section class="sintaxis">
+        <h2 class="subtitle">Sintaxis</h2>
         <p>fakeEvery(array,callback(elemento))</p>
-        <h3>Parámetros</h3>
-        <h4>array</h4>
-        <p>El array que la funcion recorrera</p>
-        <h4>callback</h4>
-        <p>La funcion que se ejecutara para cada elemento del array</p>
-        <ul>
-          <li><p>elemento</p></li>
-        </ul>
-        <p>El elemento que sera procesado por la funcion callback</p>
-        <h2>Descripcion</h2>
+        <dl>
+          <dt>Parámetros</dt>
+          <dd>array</dd>
+          <dd>El array que la funcion recorrera</dd>
+        </dl>
+        <dl>
+          <dt>callback</dt>
+          <dd>La funcion que se ejecutara para cada elemento del array</dd>
+          <dd>
+            <ul>
+              <li><p>elemento</p></li>
+            </ul>
+          </dd>
+          <dd>El elemento que sera procesado por la funcion callback</dd>
+        </dl>
+        <h2 class="subtitle">Descripcion</h2>
         <p>
-          La función fakeEvery ejecuta la función callback dada una vez por cada
-          elemento presente en el arreglo hasta encontrar uno que haga retornar
-          un valor <b>false</b> a callback (un valor que resulte
-          <b>false</b> cuando se convierta a booleano). Si no se encuentra tal
-          elemento, el método every de inmediato retorna <b>false</b>. O si
-          callback retorna <b>true</b> para todos los elementos, fakeEvery
-          retornará <b>true</b>.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+          maxime harum dicta error, blanditiis neque quisquam ratione. Quos
+          ipsum nesciunt quidem odit et aperiam suscipit, corporis ea repellat,
+          pariatur magni.
         </p>
       </section>
-      <hr />
-      <section>
-        <h2>Ejemplos</h2>
+      <section class="examples">
+        <h2 class="subtitle">Ejemplos</h2>
         <p>Evaluar si los numeros del array cumplen con la condición</p>
-        <img src="images/fakeEveryExample1.PNG" alt="example1" />
+        <pre><code>fakeEvery([1, 23, 76, 45], numbers => numbers < 55); // false</code></pre>
         <p>Evaluar si los valores del array cumplen con la condición</p>
-        <img src="images/fakeEveryExample2.PNG" alt="example2" />
+        <pre><code>fakeEvery(["jose", "ana"; "antonio", "maria"], elements => elements!= "julia"); // true</code></pre>
       </section>
-      <hr />
     </main>
-    <footer>
-      <h3>Ver tambien</h3>
-      <ul>
-        <li><a href="fakeForEach.html">fakeForEach</a></li>
-        <li><a href="fakeSome.html">fakeSome</a></li>
-        <li><a href="fakeMap.html">fakeMap</a></li>
-        <li><a href="fakeFind.html">fakeFind</a></li>
-        <li><a href="fakeIncludes.html">fakeIncludes</a></li>
-        <li><a href="fakeFilter.html">fakeFilter</a></li>
-        <li><a href="fakeReduce.html">fakeReduce</a></li>
-      </ul>
+    <footer class="footer">
+      <p class="copyright">
+        Copyright 2019 fakeTeam | Todos los derechos reservados
+      </p>
+      <a href="#header">Volver al inicio</a>
     </footer>
   </body>
 </html>
