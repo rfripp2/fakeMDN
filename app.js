@@ -1,4 +1,5 @@
 //fakeEvery
+
 function fakeEvery(arr, callback) {
   let trusthyArr = [];
   fakeForEach(arr, element => {
@@ -10,6 +11,7 @@ function fakeEvery(arr, callback) {
 }
 
 //fakeIncludes function
+
 function fakeIncludes(arr, element) {
   let indexed = fakeIndexOf(arr, element);
   if (indexed > -1) {
@@ -104,6 +106,7 @@ function fakeIndexOf(arr, element) {
   return -1;
 }
 
+
 //fakeIndexOf function (recursive)
 
 function fakeIndexOfRecursive(arr, element, i = 0) {
@@ -115,3 +118,27 @@ function fakeIndexOfRecursive(arr, element, i = 0) {
   }
   return fakeIndexOfRecursive(arr, element, (i += 1));
 }
+
+
+// fakeReduce function
+
+function fakeReduce(arr, callback, initial) {
+  let accumulator = initial || 0;
+  fakeForEach(arr, element => {
+    accumulator = callback(accumulator, element);
+  });
+  return accumulator;
+
+// fakeSum function
+
+function fakeSum(arr) {
+  let total = fakeReduce(
+    arr,
+    function(a, b) {
+      return a + b;
+    },
+    0
+  );
+  return total;
+
+
