@@ -1,4 +1,5 @@
 //fakeEvery
+
 function fakeEvery(arr, callback) {
   let trusthyArr = [];
   fakeForEach(arr, element => {
@@ -10,11 +11,11 @@ function fakeEvery(arr, callback) {
 }
 
 //fakeIncludes function
+
 function fakeIncludes(arr, element) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == element) {
-      return true;
-    }
+  let indexed = fakeIndexOf(arr, element);
+  if (indexed > -1) {
+    return true;
   }
   return false;
 }
@@ -41,11 +42,10 @@ function fakeFilter(arr, callback) {
 
 // fakeSome function
 
-function fakeSome(arr, func) {
-  for (i = 0; i < arr.length; i++) {
-    if (func(arr[i]) === true) {
-      return true;
-    }
+function fakeSome(arr, callback) {
+  let filteredS = fakeFilter(arr, callback);
+  if (filteredS.length > 0) {
+    return true;
   }
   return false;
 }
@@ -85,6 +85,17 @@ function fakeUnion(arr1, arr2) {
   return unionArr;
 }
 
+// fakeIndexOf function (iterative)
+
+function fakeIndexOf(arr, element) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == element) {
+      return i;
+    }
+  }
+  return -1;
+}
+
 // fakeReduce function
 
 function fakeReduce(arr, callback, initial) {
@@ -93,4 +104,3 @@ function fakeReduce(arr, callback, initial) {
     accumulator = callback(accumulator, element);
   });
   return accumulator;
-}
