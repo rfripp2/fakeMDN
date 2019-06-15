@@ -60,6 +60,17 @@ function fakeFind(arr, callback) {
   }
 }
 
+//function fakeMap()
+
+function fakeMap(array, callback) {
+  const arrayMapped = [];
+  fakeForEach(array, element => {
+    arrayMapped.push(callback(element));
+  });
+  return arrayMapped;
+}
+
+
 // fakeIntersection function
 
 function fakeIntersection(arr1, arr2) {
@@ -96,6 +107,7 @@ function fakeIndexOf(arr, element) {
   return -1;
 }
 
+
 // fakeReduce function
 
 function fakeReduce(arr, callback, initial) {
@@ -104,3 +116,16 @@ function fakeReduce(arr, callback, initial) {
     accumulator = callback(accumulator, element);
   });
   return accumulator;
+
+// fakeSum function
+
+function fakeSum(arr) {
+  let total = fakeReduce(
+    arr,
+    function(a, b) {
+      return a + b;
+    },
+    0
+  );
+  return total;
+
