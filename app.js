@@ -70,7 +70,6 @@ function fakeMap(array, callback) {
   return arrayMapped;
 }
 
-
 // fakeIntersection function
 
 function fakeIntersection(arr1, arr2) {
@@ -108,6 +107,19 @@ function fakeIndexOf(arr, element) {
 }
 
 
+//fakeIndexOf function (recursive)
+
+function fakeIndexOfRecursive(arr, element, i = 0) {
+  if (arr.length < i) {
+    return -1;
+  }
+  if (element == arr[i]) {
+    return i;
+  }
+  return fakeIndexOfRecursive(arr, element, (i += 1));
+}
+
+
 // fakeReduce function
 
 function fakeReduce(arr, callback, initial) {
@@ -128,4 +140,5 @@ function fakeSum(arr) {
     0
   );
   return total;
+
 
