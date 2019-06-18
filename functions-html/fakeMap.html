@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>fakeEvery</title>
+    <title>fakeMDN</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="../app.js"></script>
     <script
@@ -25,7 +25,7 @@
   </head>
   <body>
     <header id="header" class="header">
-      <h1 class="title">Funcion fakeIncludes()</h1>
+      <h1 class="title">fakeMap()</h1>
     </header>
     <nav class="nav-bar">
       <h3 class="leftTitle">Ver tambien</h3>
@@ -46,7 +46,7 @@
           <a href="fakeFind.html" class="link-item">fakeFind</a>
         </li>
         <li class="list-item">
-          <a href="fakeMap.html" class="link-item">fakeMap</a>
+          <a href="fakeIncludes.html" class="link-item">fakeIncludes</a>
         </li>
         <li class="list-item">
           <a href="fakeFilter.html" class="link-item">fakeFilter</a>
@@ -73,66 +73,66 @@
         </li>
       </ul>
     </nav>
-
     <main class="content">
       <section class="principal">
+        <h1>Funcion fakeMap()</h1>
         <p>
-          La función includes() determina si una matriz incluye un determinado
-          elemento, devuelve true o false según corresponda. Utiliza el
-          algoritmo sameValueZero para determinar si se encuentra el elemento
-          dado.
+          El método fakeMap() crea un nuevo array con los resultados de la
+          llamada a la función indicada aplicados a cada uno de sus elementos.
         </p>
         <h2 class="subtitle">Demo</h2>
         <pre>
           <code>
-                var array1 = [1, 2, 3];
-
-                console.log(fakeIncludes(array1, 2));
-                // expected output: true
-
-                var pets = ['cat', 'dog', 'bat'];
-
-                console.log(fakeIncludes(pets,'cat'));
-                // expected output: true
-
-                console.log(fakeIncludes(pets,'at'));
-                // expected output: false
+            function fakeMap(array, callback) {
+              const arrayMapped = [];
+              fakeForEach(array, element => {
+                arrayMapped.push(callback(element));
+              });
+              return arrayMapped;
+            }
            </code>
         </pre>
       </section>
       <section class="sintaxis">
         <h2 class="subtitle">Sintaxis</h2>
-        <p>fakeIncludes(array, searchElement</p>
+        <p>fakeMap(array,callback(elemento))</p>
         <dl>
           <dt>Parámetros</dt>
           <dd>array</dd>
           <dd>El array que la funcion recorrera</dd>
         </dl>
         <dl>
-          <dt>searchElement</dt>
-          <dd>El elemento a buscar.</dd>
+          <dt>callback</dt>
+          <dd>La funcion que se ejecutara para cada elemento del array</dd>
+          <dd>
+            <ul>
+              <li><p>elemento</p></li>
+            </ul>
+          </dd>
+          <dd>El elemento que sera procesado por la funcion callback</dd>
         </dl>
+        <h2 class="subtitle">Descripcion</h2>
+        <p>
+          fakeMap llama a la función callback provista una vez por elemento de
+          un array, en orden, y construye un nuevo array con los resultados.
+          callback se invoca sólo para los índices del array que tienen valores
+          asignados; no se invoca en los índices que han sido borrados o a los
+          que no se ha asignado valor. callback es llamada con tres argumentos:
+          el valor del elemento, el índice del elemento, y el objeto array que
+          se está recorriendo.
+        </p>
       </section>
       <section class="examples">
         <h2 class="subtitle">Ejemplos</h2>
-        <p>Evaluar si los numeros del array cumplen con la condición</p>
-        <pre>
-            <code>
-                var numbers = [1, 2, 3];
-                fakeIncludes(numbers, 2);     // true
-                fakeIncludes(numbers, 4);     // false
-                fakeIncludes(numbers, (3, 3));  // false
-                fakeIncludes(numbers, (3, -1)); // true
-                
-                var nanarray = [1, 2, NaN];
-                fakeIncludes(nanarray, NaN); // true
-            </code>
-        </pre>
+        <p>Multiplicar a todos los elementos del array por 2</p>
+        <pre><code>var array1 = [1, 4, 9, 16];
+                   // pass a function to map fakeMap(array1, x => x * 2);
+                   //(4) [2, 8, 18,32]</code></pre>
       </section>
     </main>
     <footer class="footer">
       <p class="copyright">
-        Copyright 2019 | fakeTeam | Todos los derechos reservados
+        Copyright 2019 fakeTeam | Todos los derechos reservados
       </p>
       <a href="#header">Volver al inicio</a>
     </footer>

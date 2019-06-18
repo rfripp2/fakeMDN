@@ -25,7 +25,7 @@
   </head>
   <body>
     <header id="header" class="header">
-      <h1 class="title">Funcion fakeIncludes()</h1>
+      <h1 class="title">Funcion fakeReduce()</h1>
     </header>
     <nav class="nav-bar">
       <h3 class="leftTitle">Ver tambien</h3>
@@ -46,13 +46,13 @@
           <a href="fakeFind.html" class="link-item">fakeFind</a>
         </li>
         <li class="list-item">
+          <a href="fakeIncludes.html" class="link-item">fakeIncludes</a>
+        </li>
+        <li class="list-item">
           <a href="fakeMap.html" class="link-item">fakeMap</a>
         </li>
         <li class="list-item">
           <a href="fakeFilter.html" class="link-item">fakeFilter</a>
-        </li>
-        <li class="list-item">
-          <a href="fakeReduce.html" class="link-item">fakeReduce</a>
         </li>
         <li class="list-item">
           <a href="fakeIndexOf.html" class="link-item">fakeIndexOf</a>
@@ -77,55 +77,67 @@
     <main class="content">
       <section class="principal">
         <p>
-          La función includes() determina si una matriz incluye un determinado
-          elemento, devuelve true o false según corresponda. Utiliza el
-          algoritmo sameValueZero para determinar si se encuentra el elemento
-          dado.
+          La función reduce() aplica una función a un acumulador y a cada valor
+          de un array (de izquierda a derecha) para reducirlo a un único valor.
         </p>
         <h2 class="subtitle">Demo</h2>
         <pre>
           <code>
-                var array1 = [1, 2, 3];
-
-                console.log(fakeIncludes(array1, 2));
-                // expected output: true
-
-                var pets = ['cat', 'dog', 'bat'];
-
-                console.log(fakeIncludes(pets,'cat'));
-                // expected output: true
-
-                console.log(fakeIncludes(pets,'at'));
-                // expected output: false
+            var numbers = [0, 1, 2, 3]
+            function sum(a, b){ 
+                return a + b; 
+            }
+            fakeReduce(numbers, sum);
+            // total == 6
            </code>
         </pre>
       </section>
       <section class="sintaxis">
         <h2 class="subtitle">Sintaxis</h2>
-        <p>fakeIncludes(array, searchElement</p>
+        <p>fakeReduce(array, callback(elemento))</p>
         <dl>
           <dt>Parámetros</dt>
           <dd>array</dd>
-          <dd>El array que la funcion recorrera</dd>
+          <dd>El array que la función recorrera.</dd>
         </dl>
         <dl>
-          <dt>searchElement</dt>
-          <dd>El elemento a buscar.</dd>
+          <dt>callback</dt>
+          <dd>La función que se ejecutara para cada elemento del array.</dd>
+          <dd>
+            <ul>
+              <li><p>elemento</p></li>
+            </ul>
+          </dd>
+          <dd>El elemento que sera procesado por la función callback.</dd>
         </dl>
+        <h2 class="subtitle">Descripción</h2>
+        <p>
+          fakeReduce ejecuta la función una vez por cada elemento presente en el
+          array, excluyendo los huecos del mismo.
+        </p>
       </section>
       <section class="examples">
         <h2 class="subtitle">Ejemplos</h2>
-        <p>Evaluar si los numeros del array cumplen con la condición</p>
+        <p>Acumular cuadrados</p>
         <pre>
             <code>
-                var numbers = [1, 2, 3];
-                fakeIncludes(numbers, 2);     // true
-                fakeIncludes(numbers, 4);     // false
-                fakeIncludes(numbers, (3, 3));  // false
-                fakeIncludes(numbers, (3, -1)); // true
-                
-                var nanarray = [1, 2, NaN];
-                fakeIncludes(nanarray, NaN); // true
+                var array1 = [1, 2, 3, 4];
+                function square(a, b){ 
+                    return (a * a) + (b * b); 
+                  }
+                fakeReduce(array1, square);
+                // total == 30
+            </code>
+        </pre>
+        <p>Evaluar si los valores del array cumplen con la condición</p>
+        <pre>
+            <code>
+                var integrado = [[0,1], [2,3], [4,5]]
+                function concatenar(a,b){
+                    return a.concat(b);
+                }
+                fakeReduce(integrado, concatenar);
+                // integrado es [0, 1, 2, 3, 4, 5]
             </code>
         </pre>
       </section>

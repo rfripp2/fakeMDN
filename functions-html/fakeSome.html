@@ -25,7 +25,7 @@
   </head>
   <body>
     <header id="header" class="header">
-      <h1 class="title">Funcion fakeIncludes()</h1>
+      <h1 class="title">Funcion fakeSome()</h1>
     </header>
     <nav class="nav-bar">
       <h3 class="leftTitle">Ver tambien</h3>
@@ -37,13 +37,13 @@
           <a href="fakeForEach.html" class="link-item">fakeForEach</a>
         </li>
         <li class="list-item">
-          <a href="fakeSome.html" class="link-item">fakeSome</a>
-        </li>
-        <li class="list-item">
           <a href="fakeEvery.html" class="link-item">fakeEvery</a>
         </li>
         <li class="list-item">
           <a href="fakeFind.html" class="link-item">fakeFind</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIncludes.html" class="link-item">fakeIncludes</a>
         </li>
         <li class="list-item">
           <a href="fakeMap.html" class="link-item">fakeMap</a>
@@ -77,55 +77,79 @@
     <main class="content">
       <section class="principal">
         <p>
-          La función includes() determina si una matriz incluye un determinado
-          elemento, devuelve true o false según corresponda. Utiliza el
-          algoritmo sameValueZero para determinar si se encuentra el elemento
-          dado.
+          La función some() comprueba si al menos un elemento del array cumple
+          con la condición implementada por la función proporcionada.
         </p>
         <h2 class="subtitle">Demo</h2>
         <pre>
           <code>
-                var array1 = [1, 2, 3];
+                var array = [1, 2, 3, 4, 5];
 
-                console.log(fakeIncludes(array1, 2));
+                var even = function(element) {
+                  // checks whether an element is even
+                  return element % 2 === 0;
+                };
+                
+                console.log(fakeSome(array, even));
                 // expected output: true
-
-                var pets = ['cat', 'dog', 'bat'];
-
-                console.log(fakeIncludes(pets,'cat'));
-                // expected output: true
-
-                console.log(fakeIncludes(pets,'at'));
-                // expected output: false
            </code>
         </pre>
       </section>
       <section class="sintaxis">
         <h2 class="subtitle">Sintaxis</h2>
-        <p>fakeIncludes(array, searchElement</p>
+        <p>fakeEvery(array,callback(elemento))</p>
         <dl>
           <dt>Parámetros</dt>
           <dd>array</dd>
           <dd>El array que la funcion recorrera</dd>
         </dl>
         <dl>
-          <dt>searchElement</dt>
-          <dd>El elemento a buscar.</dd>
+          <dt>callback</dt>
+          <dd>Función que verifica cada elemento</dd>
+          <dd>
+            <ul>
+              <li><p>elemento</p></li>
+            </ul>
+          </dd>
+          <dd>El elemento actual siendo procesado en el array.</dd>
         </dl>
+        <h2 class="subtitle">Descripcion</h2>
+        <p>
+          some() ejecuta la función callback una vez por cada elemento presente
+          en el array hasta que encuentre uno donde callback retorna un valor
+          verdadero (true). Si se encuentra dicho elemento, some() retorna true
+          inmediatamente. Si no, some() retorna false.
+        </p>
+        <p>
+          callback es invocada sólo para los índices del array que tienen
+          valores asignados; no es invocada para índices que han sido borrados o
+          a los que nunca se les han asignado valores. some() no modifica el
+          array con el cual fue llamada.
+        </p>
+        <p>
+          El rango de elementos procesados por some() es configurado antes de la
+          primera invocación de callback. Los elementos anexados al array luego
+          de que comience la llamada a some() no serán visitados por callback.
+          Si un elemento existente y no visitado del array es alterado por
+          callback, su valor pasado al callback será el valor al momento que
+          some() visita el índice del elemento; los elementos borrados no son
+          visitados.
+        </p>
       </section>
       <section class="examples">
         <h2 class="subtitle">Ejemplos</h2>
-        <p>Evaluar si los numeros del array cumplen con la condición</p>
-        <pre>
-            <code>
-                var numbers = [1, 2, 3];
-                fakeIncludes(numbers, 2);     // true
-                fakeIncludes(numbers, 4);     // false
-                fakeIncludes(numbers, (3, 3));  // false
-                fakeIncludes(numbers, (3, -1)); // true
-                
-                var nanarray = [1, 2, NaN];
-                fakeIncludes(nanarray, NaN); // true
+        <p>
+          El siguiente ejemplo verifica si algún elemento del array es mayor a
+          10.
+        </p>
+        <pre><code>
+                function isBiggerThan10(element, index, array) {
+                    return element > 10;
+                  }
+                var numbers = [2, 5, 8, 1, 4];
+                fakeSome(numbers, isBiggerThan10);  // false
+                var numbers2 = [12, 5, 8, 1, 4];
+                fakeSome(numbers2, isBiggerThan10); // true
             </code>
         </pre>
       </section>
