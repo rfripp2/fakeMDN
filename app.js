@@ -157,3 +157,20 @@ function fakeArrayMax(arr) {
 
   return findMax(arr);
 }
+
+function fakeArrayMin(arr) {
+  if (arr.length == 1) {
+    return arr[0];
+  }
+  if (arr[0] <= arr[1]) {
+    arr.splice(1, 1);
+  }
+  if (arr[0] >= arr[1]) {
+    arr.splice(0, 1);
+  }
+  if (arr.length == 0) {
+    return undefined;
+  }
+
+  return fakeArrayMin(arr);
+}
