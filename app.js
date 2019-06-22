@@ -106,7 +106,6 @@ function fakeIndexOf(arr, element) {
   return -1;
 }
 
-
 //fakeIndexOf function (recursive)
 
 function fakeIndexOfRecursive(arr, element, i = 0) {
@@ -118,7 +117,6 @@ function fakeIndexOfRecursive(arr, element, i = 0) {
   }
   return fakeIndexOfRecursive(arr, element, (i += 1));
 }
-
 
 // fakeReduce function
 
@@ -143,4 +141,19 @@ function fakeSum(arr) {
   return total;
 }
 
+function fakeArrayMax(arr) {
+  if (arr.length == 1) {
+    return arr[0];
+  }
+  if (arr[0] >= arr[1]) {
+    arr.splice(1, 1);
+  }
+  if (arr[0] <= arr[1]) {
+    arr.splice(0, 1);
+  }
+  if (arr.length == 0) {
+    return undefined;
+  }
 
+  return findMax(arr);
+}
