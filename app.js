@@ -155,7 +155,7 @@ function fakeArrayMax(arr) {
     return undefined;
   }
 
-  return findMax(arr);
+  return fakeArrayMax(arr);
 }
 
 function fakeArrayMin(arr) {
