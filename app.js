@@ -122,7 +122,7 @@ function fakeIndexOfRecursive(arr, element, i = 0) {
 
 // fakeReduce function
 
-function fakeReduce(arr, callback, initialValue) {
+function fakeReduce(arr, callback, initialValue = 0) {
   let accumulator = initialValue ;
   fakeForEach(arr, element => {
     accumulator = callback(accumulator, element);
