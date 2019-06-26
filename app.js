@@ -186,4 +186,4 @@ function fakeLastIndexOf(arr, element) {
   return -1;
 }
 
-fakeLastIndexOf(["Dodo", "Tiger", "Penguin", "Dodo"], "Dodo");
+
