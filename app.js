@@ -174,3 +174,28 @@ function fakeArrayMin(arr) {
 
   return fakeArrayMin(arr);
 }
+
+// fakeLastIndexOf function
+
+function fakeLastIndexOf(arr, element) {
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] === element) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+// fakeAreEqual function
+
+function fakeAreEqual(arr1, arr2, i = 0) {
+  if (i > arr1.length - 1 && arr1.length == arr2.length) {
+    return true;
+  }
+
+  if (arr1[i] !== arr2[i]) {
+    return false;
+  }
+
+  return areEqual(arr1, arr2, i + 1);
+}
