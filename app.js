@@ -174,3 +174,16 @@ function fakeArrayMin(arr) {
 
   return fakeArrayMin(arr);
 }
+
+// fakeLastIndexOf function
+
+function fakeLastIndexOf(arr, element) {
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] === element) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+fakeLastIndexOf(["Dodo", "Tiger", "Penguin", "Dodo"], "Dodo");
