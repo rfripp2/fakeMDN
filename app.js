@@ -197,5 +197,5 @@ function fakeAreEqual(arr1, arr2, i = 0) {
     return false;
   }
 
-  return areEqual(arr1, arr2, i + 1);
+  return fakeAreEqual(arr1, arr2, i + 1);
 }
