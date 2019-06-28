@@ -121,7 +121,7 @@ function fakeIndexOfRecursive(arr, element, i = 0) {
 // fakeReduce function
 
 function fakeReduce(arr, callback, initialValue) {
-  let accumulator = initialValue ;
+  let accumulator = initialValue;
   fakeForEach(arr, element => {
     accumulator = callback(accumulator, element);
   });
@@ -173,4 +173,13 @@ function fakeArrayMin(arr) {
   }
 
   return fakeArrayMin(arr);
+}
+
+function fakeFindIndex(array, callback) {
+  for (var i = 0; i < array.length; i += 1) {
+    if (callback(array[i])) {
+      return i;
+    }
+  }
+  return -1;
 }
