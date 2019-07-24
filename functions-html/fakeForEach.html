@@ -25,7 +25,7 @@
   </head>
   <body>
     <header id="header" class="header">
-      <h1 class="title">fakeForEach()</h1>
+      <h1 class="title">_forEach()</h1>
     </header>
          <nav class="nav-bar">
       <h3 class="leftTitle">Ver tambien</h3>
@@ -78,14 +78,14 @@
     <main class="content">
       <section class="principal">
         <p>
-          La funcion fakeForEach ejecuta una funcion para cada elemento de un
+          El metodo _forEach ejecuta una funcion para cada elemento de un
           array
         </p>
         <h2 class="subtitle">Demo</h2>
         <pre>
           <code>
           let numbers = [1,2,3]
-            fakeForEach(numbers,element => console.log(element));
+            numbers._forEach(element => console.log(element));
             <br>//1
             <br>//2
             <br>//3
@@ -94,11 +94,9 @@
       </section>
       <section class="sintaxis">
         <h2 class="subtitle">Sintaxis</h2>
-        <p>fakeForEach(array,callback(elemento))</p>
+        <p>_forEach(callback(elemento))</p>
         <dl>
           <dt>Parámetros</dt>
-          <dd>array</dd>
-          <dd>El array que la funcion recorrera</dd>
         </dl>
         <dl>
           <dt>callback</dt>
@@ -112,8 +110,8 @@
         </dl>
         <h2 class="subtitle">Descripcion</h2>
         <p>
-          fakeForEach llama a la funcion callback, que sera ejecutada para cada
-          elemento del array que pasemos como primer parametro. fakeForEach no
+          _forEach ejecuta  la funcion callback, que sera ejecutada para cada
+          elemento del array que se provea. _forEach no
           retorna ni muta el array, salvo que se especifique en el callback que
           queremos retornar algun valor en algun binding.
         </p>
@@ -122,7 +120,7 @@
         <h2 class="subtitle">Ejemplos</h2>
         <p>Confirmar que no muta el array.</p>
         <pre><code>let numbers = [1,2,3];
-            <br>fakeForEach(numbers,element => {
+            <br>numbers._forEach(element => {
               element *= 2;
               console.log(element);
             });
