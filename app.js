@@ -20,13 +20,15 @@ function fakeIncludes(arr, element) {
   return false;
 }
 
-// fakeForEach function
+// _forEach function
 
-function fakeForEach(arr, callback) {
-  for (let element of arr) {
+function _forEach(callback) {
+  for (let element of this) {
     callback(element);
   }
 }
+Array.prototype._forEach = _forEach;
+
 
 // fakeFilter function
 
