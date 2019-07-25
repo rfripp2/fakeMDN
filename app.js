@@ -46,10 +46,12 @@ function _filter(callback) {
   });
   return filtered;
 }
-// fakeSome function
+// _some function
 
-function fakeSome(arr, callback) {
-  let filteredS = fakeFilter(arr, callback);
+Array.prototype._some = _some;
+
+function _some(callback) {
+  let filteredS = this._filter(callback);
   if (filteredS.length > 0) {
     return true;
   }
