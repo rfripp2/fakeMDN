@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>fakeEvery</title>
+    <title>_every</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="../app.js"></script>
     <script
@@ -25,7 +25,7 @@
   </head>
   <body>
     <header id="header" class="header">
-      <h1 class="title">fakeEvery()</h1>
+      <h1 class="title">_every()</h1>
     </header>
     <nav class="nav-bar">
       <h3 class="leftTitle">Ver tambien</h3>
@@ -75,34 +75,26 @@
     </nav>
     <main class="content">
       <section class="principal">
-        <h1>Funcion fakeEvery()</h1>
+        <h1>_every()</h1>
         <p>
-          El método fakeEvery() prueba si todos los elementos del array pasan la
+          El método _every() prueba si todos los elementos del array pasan la
           prueba implementada por la función proporcionada. Devuelve un valor
           booleano.
         </p>
         <h2 class="subtitle">Demo</h2>
         <pre>
           <code>
-            function fakeEvery(arr, callback) {
-              let trusthyArr = [];
-              fakeForEach(arr, element => {
-                if (callback(element)) {
-                  trusthyArr.push(element);
-                }
-              });
-              return trusthyArr.length == arr.length;
-            }
+            [1, 2, 3, 4]._every(x => x > 0);
+            // true;
            </code>
         </pre>
       </section>
       <section class="sintaxis">
         <h2 class="subtitle">Sintaxis</h2>
-        <p>fakeEvery(array,callback(elemento))</p>
+        <p>arr._every(callback(elemento))</p>
         <dl>
           <dt>Parámetros</dt>
-          <dd>array</dd>
-          <dd>El array que la funcion recorrera</dd>
+         
         </dl>
         <dl>
           <dt>callback</dt>
@@ -116,7 +108,7 @@
         </dl>
         <h2 class="subtitle">Descripcion</h2>
         <p>
-          El método fakeEvery ejecuta la función callback dada una vez por cada
+          El método _every ejecuta la función callback dada una vez por cada
           elemento presente en el arreglo hasta encontrar uno que haga retornar
           un valor falso a callback (un valor que resulte falso cuando se
           convierta a booleano). Si no se encuentra tal elemento, el método
@@ -130,9 +122,9 @@
       <section class="examples">
         <h2 class="subtitle">Ejemplos</h2>
         <p>Evaluar si los numeros del array cumplen con la condición</p>
-        <pre><code>fakeEvery([1, 23, 76, 45], numbers => numbers < 55); // false</code></pre>
+        <pre><code>[1, 23, 76, 45]._every(numbers => numbers < 55); // false</code></pre>
         <p>Evaluar si los valores del array cumplen con la condición</p>
-        <pre><code>fakeEvery(["jose", "ana"; "antonio", "maria"], elements => elements!= "julia"); // true</code></pre>
+        <pre><code>["jose", "ana"; "antonio", "maria"]._every(elements => elements!= "julia"); // true</code></pre>
       </section>
     </main>
     <footer class="footer">
