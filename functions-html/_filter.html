@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>fakeFilter</title>
+    <title>_filter</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="../app.js"></script>
     <script
@@ -77,24 +77,23 @@
     <main class="content">
       <section class="principal">
         <p>
-          fakeFilter crea un nuevo array con los elementos que pasen el test de
+         El metodo _filter crea un nuevo array con los elementos que pasen el test de
           la funcion proveida en el callback.
         </p>
         <h2 class="subtitle">Demo</h2>
         <pre>
           <code>
-            fakeFilter([3, 65, 100, 1000], number => number > 65);
+            [3, 65, 100, 1000]._filter(number => number > 65);
             <br>// [100,1000]
            </code>
         </pre>
       </section>
       <section class="sintaxis">
         <h2 class="subtitle">Sintaxis</h2>
-        <p>fakeFilter(array,callback(elemento))</p>
+        <p>arr._filter(callback(elemento))</p>
         <dl>
           <dt>Parámetros</dt>
-          <dd>array</dd>
-          <dd>El array que la funcion recorrera</dd>
+          
         </dl>
         <dl>
           <dt>callback</dt>
@@ -108,14 +107,14 @@
         </dl>
         <h2 class="subtitle">Descripcion</h2>
         <p>
-          fakeFilter llama a la funcion callback,la cual testea si da true o
+          _filter llama a la funcion callback,la cual testea si da true o
           false para cada elemento del array. Los que pasen el test,(la funcion
-          retorne true),seran copiados a un nuevo array,el cual fakeFilter
-          retornara. Si ningun elemento pasa el test, fakeFilter devuelve un
+          retorne true),seran copiados a un nuevo array,el cual se
+          retornara. Si ningun elemento pasa el test, se devuelve un
           array vacio.
         </p>
         <p>
-          fakeFilter no muta el array
+          _filter no muta el array
         </p>
       </section>
       <section class="examples">
@@ -125,7 +124,7 @@
         </p>
         <pre><code>
             let numbers = [-4,3,7,-100];
-            fakeFilter(numbers,number => number > 0);
+            numbers._filter(number => number > 0);
             // [3,7];
         </code></pre>
       </section>
