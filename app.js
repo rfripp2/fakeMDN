@@ -1,7 +1,6 @@
 //fakeEvery
 
 Array.prototype._every = _every;
-
 function _every(callback) {
   let trusthyArr = [];
   this._forEach(element => {
@@ -24,19 +23,18 @@ function fakeIncludes(arr, element) {
 }
 
 // _forEach function
-
+Array.prototype._forEach = _forEach;
 function _forEach(callback) {
   for (let element of this) {
     callback(element);
   }
 }
-Array.prototype._forEach = _forEach;
+
 
 
 // fakeFilter function
 
 Array.prototype._filter = _filter;
-
 function _filter(callback) {
   let filtered = [];
   this._forEach(element => {
@@ -49,7 +47,6 @@ function _filter(callback) {
 // _some function
 
 Array.prototype._some = _some;
-
 function _some(callback) {
   let filteredS = this._filter(callback);
   if (filteredS.length > 0) {
@@ -60,13 +57,15 @@ function _some(callback) {
 
 // fakeFind function
 
-function fakeFind(arr, callback) {
-  for (let element of arr) {
+Array.prototype._find = _find;
+function _find(callback) {
+  for (let element of this) {
     if (callback(element)) {
       return element;
     }
   }
 }
+
 
 //function fakeMap()
 
