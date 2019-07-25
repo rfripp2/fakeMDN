@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>fakeEvery</title>
+    <title>_some</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="../app.js"></script>
     <script
@@ -77,31 +77,26 @@
     <main class="content">
       <section class="principal">
         <p>
-          La función some() comprueba si al menos un elemento del array cumple
+          el metodo _some() comprueba si al menos un elemento del array cumple
           con la condición implementada por la función proporcionada.
         </p>
         <h2 class="subtitle">Demo</h2>
         <pre>
           <code>
-                var array = [1, 2, 3, 4, 5];
+                let array = [1, 2, 3, 4, 5];
 
-                var even = function(element) {
-                  // checks whether an element is even
-                  return element % 2 === 0;
-                };
+                array._some(x => x % 2)
                 
                 console.log(fakeSome(array, even));
-                // expected output: true
+                //true
            </code>
         </pre>
       </section>
       <section class="sintaxis">
         <h2 class="subtitle">Sintaxis</h2>
-        <p>fakeEvery(array,callback(elemento))</p>
+        <p>arr._some(callback(elemento))</p>
         <dl>
-          <dt>Parámetros</dt>
-          <dd>array</dd>
-          <dd>El array que la funcion recorrera</dd>
+          
         </dl>
         <dl>
           <dt>callback</dt>
@@ -146,10 +141,10 @@
                 function isBiggerThan10(element, index, array) {
                     return element > 10;
                   }
-                var numbers = [2, 5, 8, 1, 4];
-                fakeSome(numbers, isBiggerThan10);  // false
-                var numbers2 = [12, 5, 8, 1, 4];
-                fakeSome(numbers2, isBiggerThan10); // true
+                let numbers = [2, 5, 8, 1, 4];
+                numbers._some(isBiggerThan10);  // false
+                let numbers2 = [12, 5, 8, 1, 4];
+                numbers2._some(isBiggerThan10); // true
             </code>
         </pre>
       </section>
