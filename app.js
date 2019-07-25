@@ -32,16 +32,17 @@ Array.prototype._forEach = _forEach;
 
 // fakeFilter function
 
-function fakeFilter(arr, callback) {
+Array.prototype._filter = _filter;
+
+function _filter(callback) {
   let filtered = [];
-  fakeForEach(arr, element => {
+  this._forEach(element => {
     if (callback(element)) {
       filtered.push(element);
     }
   });
   return filtered;
 }
-
 // fakeSome function
 
 function fakeSome(arr, callback) {
