@@ -1,14 +1,17 @@
 //fakeEvery
 
-function fakeEvery(arr, callback) {
+Array.prototype._every = _every;
+
+function _every(callback) {
   let trusthyArr = [];
-  fakeForEach(arr, element => {
+  this._forEach(element => {
     if (callback(element)) {
       trusthyArr.push(element);
     }
   });
-  return trusthyArr.length == arr.length;
+  return trusthyArr.length == this.length;
 }
+
 
 //fakeIncludes function
 
