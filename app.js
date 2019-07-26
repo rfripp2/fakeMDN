@@ -97,7 +97,7 @@ function _intersection(arr1, arr2) {
 // _union function
 
 function _union(arr1, arr2) {
-  return Array.from(new Set(arr1.concat(...arr2)));
+  return Array.from(new Set([...arr1, ...arr2]));
 }
 
 // fakeIndexOf function (iterative)
