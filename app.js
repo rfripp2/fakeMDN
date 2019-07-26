@@ -1,4 +1,4 @@
-//fakeEvery
+//_every
 
 Array.prototype._every = _every;
 function _every(callback) {
@@ -32,7 +32,7 @@ function _forEach(callback) {
 
 
 
-// fakeFilter function
+// _filter function
 
 Array.prototype._filter = _filter;
 function _filter(callback) {
@@ -44,6 +44,8 @@ function _filter(callback) {
   });
   return filtered;
 }
+
+
 // _some function
 
 Array.prototype._some = _some;
@@ -55,7 +57,7 @@ function _some(callback) {
   return false;
 }
 
-// fakeFind function
+// _find function
 
 Array.prototype._find = _find;
 function _find(callback) {
@@ -67,14 +69,15 @@ function _find(callback) {
 }
 
 
-//function fakeMap()
+//function _map()
 
-function fakeMap(array, callback) {
-  const arrayMapped = [];
-  fakeForEach(array, element => {
-    arrayMapped.push(callback(element));
+Array.prototype._map = _map;
+function _map(callback) {
+  const mappedArray = [];
+  this._forEach(element => {
+    mappedArray.push(callback(element));
   });
-  return arrayMapped;
+  return mappedArray;
 }
 
 // fakeIntersection function
