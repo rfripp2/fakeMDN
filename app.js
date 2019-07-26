@@ -82,7 +82,7 @@ function _map(callback) {
 
 // _intersection function
 
-Array.prototype._intersection = _intersection;
+
 function _intersection(arr1, arr2) {
   let intersectionArr = [];
   arr1._forEach(element => {
