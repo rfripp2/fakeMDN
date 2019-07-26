@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>fakeForEach</title>
+    <title>_find</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="../app.js"></script>
     <script
@@ -25,7 +25,7 @@
   </head>
   <body>
     <header id="header" class="header">
-      <h1 class="title">fakeFind()</h1>
+      <h1 class="title">_find()</h1>
     </header>
     <nav class="nav-bar">
       <h3 class="leftTitle">Ver tambien</h3>
@@ -81,24 +81,23 @@
     <main class="content">
       <section class="principal">
         <p>
-          La funcion fakeFind retorna el valor del primer elemento que pase el
+          El metodo _find() retorna el valor del primer elemento que pase el
           test de la funcion que se ejecute.
         </p>
         <h2 class="subtitle">Demo</h2>
         <pre>
           <code>
-            fakeFind([3, 65, 100, 1000], item => item > 50);
+            [3, 65, 100, 1000]._find(item => item > 50);
             <br>// 65
            </code>
         </pre>
       </section>
       <section class="sintaxis">
         <h2 class="subtitle">Sintaxis</h2>
-        <p>fakeFind(array,callback(elemento))</p>
+        <p>arr.find(callback(elemento)</p>
         <dl>
           <dt>Parámetros</dt>
-          <dd>array</dd>
-          <dd>El array que la funcion recorrera</dd>
+      
         </dl>
         <dl>
           <dt>callback</dt>
@@ -112,7 +111,7 @@
         </dl>
         <h2 class="subtitle">Descripcion</h2>
         <p>
-          fakeFind llama a la funcion callback,que se ejecutara para cada
+          _find llama a la funcion callback,que se ejecutara para cada
           elemento hasta que la funcion retorne true,y retornara el valor de
           dicho elemento.
           <br />Si ningun elemento pasa el test, retornara undefined.
@@ -130,7 +129,7 @@
             "yo tendre mas de 20?!!! espero ser el primero que pasa el test",
             "yo seguro tengo mas que 20 ,pero capaz ya me ganaron"
           ];
-            fakeFind(carreraDeCharacteres,item => item.length > 25);
+            carreraDeCharacteres._find(item => item.length > 25);
               <br>//"yo tendre mas de 20?!!! espero ser el primero que pasa el test"</code></pre>
       </section>
     </main>
