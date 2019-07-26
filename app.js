@@ -102,9 +102,10 @@ function _union(arr1, arr2) {
 
 // fakeIndexOf function (iterative)
 
-function fakeIndexOf(arr, element) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == element) {
+Array.prototype._indexOf = _indexOf;
+function _indexOf(element) {
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] == element) {
       return i;
     }
   }
