@@ -80,8 +80,8 @@ function _map(callback) {
   return mappedArray;
 }
 
-// _intersection function
 
+// _intersection function
 
 function _intersection(arr1, arr2) {
   let intersectionArr = [];
@@ -94,17 +94,10 @@ function _intersection(arr1, arr2) {
 }
 
 
-// fakeUnion function
+// _union function
 
-function fakeUnion(arr1, arr2) {
-  let unionArr = [];
-  let intersectionArr = fakeIntersection(arr1, arr2);
-  fakeForEach(intersectionArr, element => {
-    if (unionArr.indexOf(element) == -1) {
-      unionArr.push(element);
-    }
-  });
-  return unionArr;
+function _union(arr1, arr2) {
+  return Array.from(new Set(arr1.concat(...arr2)));
 }
 
 // fakeIndexOf function (iterative)
