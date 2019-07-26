@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>fakeEvery</title>
+    <title>_indexOf</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="../app.js"></script>
     <script
@@ -77,18 +77,17 @@
     <main class="content">
       <section class="principal">
         <p>
-          La función indexOf() retorna el primer índice en el que se puede
+          El metod _indexOf() retorna el primer índice en el que se puede
           encontrar un elemento dado en el array, ó retorna -1 si el elemento no
           esta presente.
         </p>
       </section>
       <section class="sintaxis">
         <h2 class="subtitle">Sintaxis</h2>
-        <p>fakeIndexOf(array, searchElement)</p>
+        <p>array._indexOf(searchElement)</p>
         <dl>
           <dt>Parámetros</dt>
-          <dd>array</dd>
-          <dd>El array que la funcion recorrera</dd>
+          
         </dl>
         <dl>
           <dt>searchElement</dt>
@@ -96,7 +95,7 @@
         </dl>
         <h2 class="subtitle">Descripción</h2>
         <p>
-          indexOf() compara searchElement con los elementos del array usando
+          _indexOf() compara searchElement con los elementos del array usando
           igualdad estricta (el mismo método que cuando se usa ===, o el
           operador igualdad-triple).
         </p>
@@ -104,16 +103,16 @@
       <section class="examples">
         <h2 class="subtitle">Ejemplos</h2>
         <p>
-          El siguiente ejemplo usa indexof() para localizar valores en un array
+          El siguiente ejemplo usa _indexof() para localizar valores en un array
         </p>
         <pre>
             <code>
                 var array = [2, 9, 9];
-                fakeIndexOf(array, 2);     // 0
-                fakeIndexOf(array, 7);     // -1
-                fakeIndexOf(array, (9, 2));  // 2
-                fakeIndexOf(array, (2, -1)); // -1
-                fakeIndexOf(array, (2, -3)); // 0
+                array.indexOf(2);     // 0
+                array.indexOf(7);     // -1
+                array.indexOf(9, 2));  // 2
+                array.indexOf(2, -1)); // -1
+                array.indexOf(2, -3)); // 0
             </code>
         </pre>
         <p>
@@ -123,7 +122,7 @@
         <pre>
             <code>
                 function updateVegetablesCollection (veggies, veggie) {
-                    if (fakeIndexOf(veggies, veggie)) === -1) {
+                    if (fakeIndexOf(veggies veggie)) === -1) {
                     veggies.push(veggie);
                     console.log('La nueva colección de vegetales es: ' + veggies);
                     } else if (fakeIndexOf(veggies, veggie)) > -1) {
