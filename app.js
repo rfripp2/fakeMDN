@@ -80,17 +80,19 @@ function _map(callback) {
   return mappedArray;
 }
 
-// fakeIntersection function
+// _intersection function
 
-function fakeIntersection(arr1, arr2) {
+Array.prototype._intersection = _intersection;
+function _intersection(arr1, arr2) {
   let intersectionArr = [];
-  fakeForEach(arr1, element => {
+  arr1._forEach(element => {
     if (arr2.indexOf(element) >= 0) {
       intersectionArr.push(element);
     }
   });
-  return intersectionArr;
+  return Array.from(new Set(intersectionArr));
 }
+
 
 // fakeUnion function
 
