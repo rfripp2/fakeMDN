@@ -22,7 +22,7 @@ function fakeIncludes(arr, element) {
   return false;
 }
 
-// _forEach function
+// _forEach method
 Array.prototype._forEach = function(callback) {
   for (let element of this) {
     callback(element);
@@ -31,10 +31,9 @@ Array.prototype._forEach = function(callback) {
 
 
 
-// _filter function
+// _filter method
 
-Array.prototype._filter = _filter;
-function _filter(callback) {
+Array.prototype._filter = function(callback) {
   let filtered = [];
   this._forEach(element => {
     if (callback(element)) {
@@ -42,8 +41,7 @@ function _filter(callback) {
     }
   });
   return filtered;
-}
-
+};
 
 // _some function
 
