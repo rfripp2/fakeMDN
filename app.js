@@ -163,22 +163,25 @@ Array.prototype._arrayMax = function() {
   return this._arrayMax();
 };
 
-function fakeArrayMin(arr) {
-  if (arr.length == 1) {
-    return arr[0];
+
+// _arrayMin method
+Array.prototype._arrayMin = function() {
+  if (this.length == 1) {
+    return this[0];
   }
-  if (arr[0] <= arr[1]) {
-    arr.splice(1, 1);
+  if (this[0] <= this[1]) {
+    this.splice(1, 1);
   }
-  if (arr[0] >= arr[1]) {
-    arr.splice(0, 1);
+  if (this[0] >= this[1]) {
+    this.splice(0, 1);
   }
-  if (arr.length == 0) {
+  if (this.length == 0) {
     return undefined;
   }
 
-  return fakeArrayMin(arr);
-}
+  return this._arrayMin();
+};
+
 
 function fakeFindIndex(array, callback) {
   for (var i = 0; i < array.length; i += 1) {
