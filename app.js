@@ -91,11 +91,11 @@ function _intersection(arr1, arr2) {
 }
 
 
-// _union function
+// _union method
 
-function _union(arr1, arr2) {
-  return Array.from(new Set([...arr1, ...arr2]));
-}
+Array.prototype._union = function(arr) {
+  return [...new Set([...this, ...arr])];
+};
 
 // fakeIndexOf function (iterative)
 
