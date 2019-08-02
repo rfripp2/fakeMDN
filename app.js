@@ -109,17 +109,17 @@ function _indexOf(element) {
   return -1;
 }
 
-//fakeIndexOf function (recursive)
+//_indexOfRecursive method
 
-function fakeIndexOfRecursive(arr, element, i = 0) {
-  if (arr.length < i) {
+Array.prototype._indexOfRecursive = function(element, i = 0) {
+  if (this.length < i) {
     return -1;
   }
-  if (element == arr[i]) {
+  if (element == this[i]) {
     return i;
   }
-  return fakeIndexOfRecursive(arr, element, (i += 1));
-}
+  return this._indexOfRecursive(element, (i += 1));
+};
 
 // fakeReduce function
 
