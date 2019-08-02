@@ -78,17 +78,18 @@ function _map(callback) {
 }
 
 
-// _intersection function
+// _intersection method
 
-function _intersection(arr1, arr2) {
-  let intersectionArr = [];
-  arr1._forEach(element => {
-    if (arr2.indexOf(element) >= 0) {
+Array.prototype._intersection = function(arr) {
+  const intersectionArr = [];
+  this._forEach(element => {
+    if (arr.indexOf(element) >= 0) {
       intersectionArr.push(element);
     }
   });
-  return Array.from(new Set(intersectionArr));
-}
+  return [...new Set(intersectionArr)];
+};
+
 
 
 // _union method
