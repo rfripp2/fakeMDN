@@ -144,22 +144,24 @@ function fakeSum(arr) {
   return total;
 }
 
-function fakeArrayMax(arr) {
-  if (arr.length == 1) {
-    return arr[0];
+// _arrayMax method
+
+Array.prototype._arrayMax = function() {
+  if (this.length == 1) {
+    return this[0];
   }
-  if (arr[0] >= arr[1]) {
-    arr.splice(1, 1);
+  if (this[0] >= this[1]) {
+    this.splice(1, 1);
   }
-  if (arr[0] <= arr[1]) {
-    arr.splice(0, 1);
+  if (this[0] <= this[1]) {
+    this.splice(0, 1);
   }
-  if (arr.length == 0) {
+  if (this.length == 0) {
     return undefined;
   }
 
-  return fakeArrayMax(arr);
-}
+  return this._arrayMax();
+};
 
 function fakeArrayMin(arr) {
   if (arr.length == 1) {
