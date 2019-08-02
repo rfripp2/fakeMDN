@@ -34,7 +34,7 @@ Array.prototype._forEach = function(callback) {
 // _filter method
 
 Array.prototype._filter = function(callback) {
-  let filtered = [];
+  const filtered = [];
   this._forEach(element => {
     if (callback(element)) {
       filtered.push(element);
