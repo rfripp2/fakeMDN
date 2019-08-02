@@ -24,7 +24,7 @@ function fakeIncludes(arr, element) {
 
 // _forEach method
 Array.prototype._forEach = function(callback) {
-  for (let element of this) {
+  for (const element of this) {
     callback(element);
   }
 };
