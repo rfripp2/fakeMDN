@@ -27,52 +27,59 @@
     <header id="header" class="header">
       <h1 class="title">fakeLastIndexOf</h1>
     </header>
-    <nav class="nav-bar">
-      <h3 class="leftTitle">Ver tambien</h3>
+     <nav class="nav-bar">
+      <h3 class="leftTitle">Array metodos</h3>
       <ul class="list-function">
         <li class="list-item">
           <a href="../index.html" class="link-item">Inicio</a>
         </li>
         <li class="list-item">
-          <a href="fakeForEach.html" class="link-item">fakeForEach</a>
+          <a href="forEach.html" class="link-item">_forEach</a>
         </li>
         <li class="list-item">
-          <a href="fakeSome.html" class="link-item">fakeSome</a>
+          <a href="some.html" class="link-item">_some</a>
         </li>
         <li class="list-item">
-          <a href="fakeEvery.html" class="link-item">fakeEvery</a>
+          <a href="every.html" class="link-item">_every</a>
         </li>
         <li class="list-item">
-          <a href="fakeFind.html" class="link-item">fakeFind</a>
+          <a href="find.html" class="link-item">_find</a>
         </li>
         <li class="list-item">
-          <a href="fakeIncludes.html" class="link-item">fakeIncludes</a>
+          <a href="includes.html" class="link-item">_includes</a>
         </li>
         <li class="list-item">
-          <a href="fakeMap.html" class="link-item">fakeMap</a>
+          <a href="map.html" class="link-item">_map</a>
         </li>
         <li class="list-item">
-          <a href="fakeFilter.html" class="link-item">fakeFilter</a>
+          <a href="filter.html" class="link-item">_filter</a>
         </li>
         <li class="list-item">
-          <a href="fakeReduce.html" class="link-item">fakeReduce</a>
+          <a href="reduce.html" class="link-item">_reduce</a>
         </li>
         <li class="list-item">
-          <a href="fakeIndexOf.html" class="link-item">fakeIndexOf</a>
+          <a href="indexOf.html" class="link-item">_indexOf</a>
         </li>
         <li class="list-item">
-          <a href="fakeIndexOfRecursive.html" class="link-item"
-            >fakeIndexOfRecursive</a
-          >
+          <a href="lastIndexOf.html" class="link-item">fakeIndexOf</a>
         </li>
         <li class="list-item">
-          <a href="fakeIntersection.html" class="link-item">fakeIntersection</a>
+          <a href="union.html" class="link-item">_union</a>
         </li>
         <li class="list-item">
-          <a href="fakeUnion.html" class="link-item">fakeUnion</a>
+          <a href="sum.html" class="link-item">_sum</a>
         </li>
         <li class="list-item">
-          <a href="fakeSum.html" class="link-item">fakeSum</a>
+          <a href="arrayMax.html" class="link-item">_arrayMax</a>
+        </li>
+        <li class="list-item">
+          <a href="arrayMin.html" class="link-item">_arrayMin</a>
+        </li>
+        <li class="list-item">
+          <a href="isEqual.html" class="link-item">_isEqual</a>
+        </li>
+        <li class="list-item">
+          <a href="concat.html" class="link-item">_concat</a>
         </li>
       </ul>
     </nav>
@@ -80,7 +87,7 @@
     <main class="content">
       <section class="principal">
         <p>
-          fakeLastIndexOf retorna el ultimo indice de un array donde se encuntre
+          _lastIndexOf retorna el ultimo indice de un array donde se encuntre
           el elemento que pasemos como parametro,en caso que no exista,retorna
           -1.
         </p>
@@ -89,18 +96,17 @@
           <code>
             let animales = ["perro","gato","vaca","perro","caballo"];
 
-            fakeLastIndexOf(animales,"perro");
+            _lastIndexOf(animales,"perro");
             // 3
            </code>
         </pre>
       </section>
       <section class="sintaxis">
         <h2 class="subtitle">Sintaxis</h2>
-        <p>fakeLastIndexOf(array,element)</p>
+        <p>_lastIndexOf(element)</p>
         <dl>
           <dt>Parámetros</dt>
-          <dd>array</dd>
-          <dd>El array que la funcion recorrera</dd>
+          
         </dl>
         <dl>
           <dt>element</dt>
@@ -111,7 +117,7 @@
         </dl>
         <h2 class="subtitle">Descripcion</h2>
         <p>
-          fakeLastIndexOf, retorna el ultimo indice donde se encuentre el
+          EL metodo _lastIndexOf, retorna el ultimo indice donde se encuentre el
           elemento, usando comparacion estricta.
         </p>
       </section>
@@ -121,7 +127,7 @@
         <pre><code>
                    let colores = ["azul","gris","negro"];
 
-                   fakeLastIndexOf(colors,"amarillo");
+                   _lastIndexOf(colors,"amarillo");
                    // -1</code></pre>
       </section>
     </main>
