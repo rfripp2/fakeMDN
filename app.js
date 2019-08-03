@@ -52,10 +52,9 @@ function _some(callback) {
   return false;
 }
 
-// _find function
+// _find method
 
-Array.prototype._find = _find;
-function _find(callback) {
+Array.prototype._find = function _find(callback) {
   for (let element of this) {
     if (callback(element)) {
       return element;
