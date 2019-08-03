@@ -201,16 +201,3 @@ Array.prototype._lastIndexOf = function(element) {
   return -1;
 };
 
-// fakeAreEqual function
-
-function fakeAreEqual(arr1, arr2, i = 0) {
-  if (i > arr1.length - 1 && arr1.length == arr2.length) {
-    return true;
-  }
-
-  if (arr1[i] !== arr2[i]) {
-    return false;
-  }
-
-  return areEqual(arr1, arr2, i + 1);
-}
