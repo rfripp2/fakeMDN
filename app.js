@@ -54,7 +54,7 @@ function _some(callback) {
 
 // _find method
 
-Array.prototype._find = function _find(callback) {
+Array.prototype._find = function(callback) {
   for (let element of this) {
     if (callback(element)) {
       return element;
