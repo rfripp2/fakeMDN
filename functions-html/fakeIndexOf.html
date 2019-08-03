@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>fakeEvery</title>
+    <title>_indexOf</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="../app.js"></script>
     <script
@@ -25,7 +25,7 @@
   </head>
   <body>
     <header id="header" class="header">
-      <h1 class="title">Funcion fakeIncludes()</h1>
+      <h1 class="title">Funcion fakeIndexOf()</h1>
     </header>
     <nav class="nav-bar">
       <h3 class="leftTitle">Ver tambien</h3>
@@ -46,6 +46,9 @@
           <a href="fakeFind.html" class="link-item">fakeFind</a>
         </li>
         <li class="list-item">
+          <a href="fakeIncludes.html" class="link-item">fakeIncludes</a>
+        </li>
+        <li class="list-item">
           <a href="fakeMap.html" class="link-item">fakeMap</a>
         </li>
         <li class="list-item">
@@ -53,9 +56,6 @@
         </li>
         <li class="list-item">
           <a href="fakeReduce.html" class="link-item">fakeReduce</a>
-        </li>
-        <li class="list-item">
-          <a href="fakeIndexOf.html" class="link-item">fakeIndexOf</a>
         </li>
         <li class="list-item">
           <a href="fakeIndexOfRecursive.html" class="link-item"
@@ -77,55 +77,65 @@
     <main class="content">
       <section class="principal">
         <p>
-          La función includes() determina si una matriz incluye un determinado
-          elemento, devuelve true o false según corresponda. Utiliza el
-          algoritmo sameValueZero para determinar si se encuentra el elemento
-          dado.
+          El metod _indexOf() retorna el primer índice en el que se puede
+          encontrar un elemento dado en el array, ó retorna -1 si el elemento no
+          esta presente.
         </p>
-        <h2 class="subtitle">Demo</h2>
-        <pre>
-          <code>
-                var array1 = [1, 2, 3];
-
-                console.log(fakeIncludes(array1, 2));
-                // expected output: true
-
-                var pets = ['cat', 'dog', 'bat'];
-
-                console.log(fakeIncludes(pets,'cat'));
-                // expected output: true
-
-                console.log(fakeIncludes(pets,'at'));
-                // expected output: false
-           </code>
-        </pre>
       </section>
       <section class="sintaxis">
         <h2 class="subtitle">Sintaxis</h2>
-        <p>fakeIncludes(array, searchElement</p>
+        <p>array._indexOf(searchElement)</p>
         <dl>
           <dt>Parámetros</dt>
-          <dd>array</dd>
-          <dd>El array que la funcion recorrera</dd>
+          
         </dl>
         <dl>
           <dt>searchElement</dt>
-          <dd>El elemento a buscar.</dd>
+          <dd>Elemento a encontrar en el array.</dd>
         </dl>
+        <h2 class="subtitle">Descripción</h2>
+        <p>
+          _indexOf() compara searchElement con los elementos del array usando
+          igualdad estricta (el mismo método que cuando se usa ===, o el
+          operador igualdad-triple).
+        </p>
       </section>
       <section class="examples">
         <h2 class="subtitle">Ejemplos</h2>
-        <p>Evaluar si los numeros del array cumplen con la condición</p>
+        <p>
+          El siguiente ejemplo usa _indexof() para localizar valores en un array
+        </p>
         <pre>
             <code>
-                var numbers = [1, 2, 3];
-                fakeIncludes(numbers, 2);     // true
-                fakeIncludes(numbers, 4);     // false
-                fakeIncludes(numbers, (3, 3));  // false
-                fakeIncludes(numbers, (3, -1)); // true
+                var array = [2, 9, 9];
+                array.indexOf(2);     // 0
+                array.indexOf(7);     // -1
+                array.indexOf(9, 2));  // 2
+                array.indexOf(2, -1)); // -1
+                array.indexOf(2, -3)); // 0
+            </code>
+        </pre>
+        <p>
+          Encontrar si un elemento existe en la matriz o no y actualizar la
+          matriz
+        </p>
+        <pre>
+            <code>
+                function updateVegetablesCollection (veggies, veggie) {
+                    if (fakeIndexOf(veggies veggie)) === -1) {
+                    veggies.push(veggie);
+                    console.log('La nueva colección de vegetales es: ' + veggies);
+                    } else if (fakeIndexOf(veggies, veggie)) > -1) {
+                    console.log(veggie + ' ya existe en la colección de verduras.');
+                    }
+                }
                 
-                var nanarray = [1, 2, NaN];
-                fakeIncludes(nanarray, NaN); // true
+                var veggies = ['patata', 'tomate', 'chiles', 'pimientoverde'];
+                    
+                updateVegetablesCollection(veggies, 'espinaca'); 
+                // La nueva colección de verduras es : patata, tomate, chiles, pimientoverde, espinaca
+                updateVegetablesCollection(veggies, 'espinaca'); 
+                // La espinaca ya existe en la colección de verduras.
             </code>
         </pre>
       </section>

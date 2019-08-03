@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>fakeEvery</title>
+    <title>fakeAreEqual</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="../app.js"></script>
     <script
@@ -25,7 +25,7 @@
   </head>
   <body>
     <header id="header" class="header">
-      <h1 class="title">Funcion fakeIncludes()</h1>
+      <h1 class="title">fakeAreEqual</h1>
     </header>
     <nav class="nav-bar">
       <h3 class="leftTitle">Ver tambien</h3>
@@ -44,6 +44,9 @@
         </li>
         <li class="list-item">
           <a href="fakeFind.html" class="link-item">fakeFind</a>
+        </li>
+        <li class="list-item">
+          <a href="fakeIncludes.html" class="link-item">fakeIncludes</a>
         </li>
         <li class="list-item">
           <a href="fakeMap.html" class="link-item">fakeMap</a>
@@ -77,62 +80,54 @@
     <main class="content">
       <section class="principal">
         <p>
-          La función includes() determina si una matriz incluye un determinado
-          elemento, devuelve true o false según corresponda. Utiliza el
-          algoritmo sameValueZero para determinar si se encuentra el elemento
-          dado.
+          fakeAreEqual compara 2 arrays y retorna un valor booleano de acuerdo a
+          si los arrays son estrictamente iguales.
         </p>
         <h2 class="subtitle">Demo</h2>
         <pre>
           <code>
-                var array1 = [1, 2, 3];
-
-                console.log(fakeIncludes(array1, 2));
-                // expected output: true
-
-                var pets = ['cat', 'dog', 'bat'];
-
-                console.log(fakeIncludes(pets,'cat'));
-                // expected output: true
-
-                console.log(fakeIncludes(pets,'at'));
-                // expected output: false
+            let arrA = [1, 2, 3];
+            let ArrB = [1, 2, 3];
+            
+            fakeAreEqual(arrA, ArrB);
+            // true
            </code>
         </pre>
       </section>
       <section class="sintaxis">
         <h2 class="subtitle">Sintaxis</h2>
-        <p>fakeIncludes(array, searchElement</p>
+        <p>fakeAreEqual(arr1,arr2)</p>
         <dl>
           <dt>Parámetros</dt>
-          <dd>array</dd>
-          <dd>El array que la funcion recorrera</dd>
+          <dd>arr1</dd>
+          <dd>El primero array que se comparara con arr2</dd>
         </dl>
         <dl>
-          <dt>searchElement</dt>
-          <dd>El elemento a buscar.</dd>
+          <dt>arr2</dt>
+          <dd>El segundo array que se comparara con arr1</dd>
         </dl>
+        <h2 class="subtitle">Descripcion</h2>
+        <p>
+          fakeAreEqual hace una comparacion estricta dos arrays,y devuelve un
+          valor booleano de acuerdo a si son exactamente iguales.
+        </p>
       </section>
       <section class="examples">
         <h2 class="subtitle">Ejemplos</h2>
-        <p>Evaluar si los numeros del array cumplen con la condición</p>
-        <pre>
-            <code>
-                var numbers = [1, 2, 3];
-                fakeIncludes(numbers, 2);     // true
-                fakeIncludes(numbers, 4);     // false
-                fakeIncludes(numbers, (3, 3));  // false
-                fakeIncludes(numbers, (3, -1)); // true
-                
-                var nanarray = [1, 2, NaN];
-                fakeIncludes(nanarray, NaN); // true
-            </code>
-        </pre>
+        <p>Comparar 2 arrays con iguales valores,pero diferente tipo de dato</p>
+
+        <p>Evaluar si los valores del array cumplen con la condición</p>
+        <pre><code>let arrA = [1, 2, 3];
+            let ArrB = [1, "2", 3];
+            
+            fakeAreEqual(arrA, ArrB);
+            // false
+            </code></pre>
       </section>
     </main>
     <footer class="footer">
       <p class="copyright">
-        Copyright 2019 | fakeTeam | Todos los derechos reservados
+        Copyright 2019 fakeTeam | Todos los derechos reservados
       </p>
       <a href="#header">Volver al inicio</a>
     </footer>

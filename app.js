@@ -1,14 +1,14 @@
-//fakeEvery
+//_every method
 
-function fakeEvery(arr, callback) {
-  let trusthyArr = [];
-  fakeForEach(arr, element => {
-    if (callback(element)) {
-      trusthyArr.push(element);
+Array.prototype._every = function(callback) {
+  for (const element of this) {
+    if (!callback(element)) {
+      return false;
     }
-  });
-  return trusthyArr.length == arr.length;
-}
+  }
+  return true;
+};
+
 
 //fakeIncludes function
 
@@ -20,108 +20,109 @@ function fakeIncludes(arr, element) {
   return false;
 }
 
-// fakeForEach function
-
-function fakeForEach(arr, callback) {
-  for (let element of arr) {
+// _forEach method
+Array.prototype._forEach = function(callback) {
+  for (const element of this) {
     callback(element);
   }
-}
+};
 
-// fakeFilter function
 
-function fakeFilter(arr, callback) {
-  let filtered = [];
-  fakeForEach(arr, element => {
+
+// _filter method
+
+Array.prototype._filter = function(callback) {
+  const filtered = [];
+  this._forEach(element => {
     if (callback(element)) {
       filtered.push(element);
     }
   });
   return filtered;
-}
+};
 
-// fakeSome function
+// _some function
 
-function fakeSome(arr, callback) {
-  let filteredS = fakeFilter(arr, callback);
+Array.prototype._some = _some;
+function _some(callback) {
+  let filteredS = this._filter(callback);
   if (filteredS.length > 0) {
     return true;
   }
   return false;
 }
 
-// fakeFind function
+// _find method
 
-function fakeFind(arr, callback) {
-  for (let element of arr) {
+Array.prototype._find = function _find(callback) {
+  for (let element of this) {
     if (callback(element)) {
       return element;
     }
   }
 }
 
-//function fakeMap()
 
-function fakeMap(array, callback) {
-  const arrayMapped = [];
-  fakeForEach(array, element => {
-    arrayMapped.push(callback(element));
+// _map method
+
+Array.prototype._map = function (callback) {
+  const mappedArray = [];
+  this._forEach(element => {
+    mappedArray.push(callback(element));
   });
-  return arrayMapped;
+  return mappedArray;
 }
 
-// fakeIntersection function
 
-function fakeIntersection(arr1, arr2) {
-  let intersectionArr = [];
-  fakeForEach(arr1, element => {
-    if (arr2.indexOf(element) >= 0) {
+
+// _intersection method
+
+Array.prototype._intersection = function(arr) {
+  const intersectionArr = [];
+  this._forEach(element => {
+    if (arr.indexOf(element) >= 0) {
       intersectionArr.push(element);
     }
   });
-  return intersectionArr;
-}
+  return [...new Set(intersectionArr)];
+};
 
-// fakeUnion function
 
-function fakeUnion(arr1, arr2) {
-  let unionArr = [];
-  let intersectionArr = fakeIntersection(arr1, arr2);
-  fakeForEach(intersectionArr, element => {
-    if (unionArr.indexOf(element) == -1) {
-      unionArr.push(element);
-    }
-  });
-  return unionArr;
-}
+
+// _union method
+
+Array.prototype._union = function(arr) {
+  return [...new Set([...this, ...arr])];
+};
 
 // fakeIndexOf function (iterative)
 
-function fakeIndexOf(arr, element) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == element) {
+Array.prototype._indexOf = _indexOf;
+function _indexOf(element) {
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] == element) {
       return i;
     }
   }
   return -1;
 }
 
-//fakeIndexOf function (recursive)
+//_indexOfRecursive method
 
-function fakeIndexOfRecursive(arr, element, i = 0) {
-  if (arr.length < i) {
+Array.prototype._indexOfRecursive = function(element, i = 0) {
+  if (this.length < i) {
     return -1;
   }
-  if (element == arr[i]) {
+  if (element == this[i]) {
     return i;
   }
-  return fakeIndexOfRecursive(arr, element, (i += 1));
-}
+  return this._indexOfRecursive(element, (i += 1));
+};
 
 // fakeReduce function
 
-function fakeReduce(arr, callback, initial) {
-  let accumulator = initial || 0;
+function fakeReduce(arr, callback, initialValue) {
+  let accumulator = initialValue;
   fakeForEach(arr, element => {
     accumulator = callback(accumulator, element);
   });
@@ -141,49 +142,62 @@ function fakeSum(arr) {
   return total;
 }
 
-function fakeArrayMax(arr) {
-  if (arr.length == 1) {
-    return arr[0];
+// _arrayMax method
+
+Array.prototype._arrayMax = function() {
+  if (this.length == 1) {
+    return this[0];
   }
-  if (arr[0] >= arr[1]) {
-    arr.splice(1, 1);
+  if (this[0] >= this[1]) {
+    this.splice(1, 1);
   }
-  if (arr[0] <= arr[1]) {
-    arr.splice(0, 1);
+  if (this[0] <= this[1]) {
+    this.splice(0, 1);
   }
-  if (arr.length == 0) {
+  if (this.length == 0) {
     return undefined;
   }
 
-  return findMax(arr);
-}
+  return this._arrayMax();
+};
 
-function fakeArrayMin(arr) {
-  if (arr.length == 1) {
-    return arr[0];
+
+// _arrayMin method
+Array.prototype._arrayMin = function() {
+  if (this.length == 1) {
+    return this[0];
   }
-  if (arr[0] <= arr[1]) {
-    arr.splice(1, 1);
+  if (this[0] <= this[1]) {
+    this.splice(1, 1);
   }
-  if (arr[0] >= arr[1]) {
-    arr.splice(0, 1);
+  if (this[0] >= this[1]) {
+    this.splice(0, 1);
   }
-  if (arr.length == 0) {
+  if (this.length == 0) {
     return undefined;
   }
 
-  return fakeArrayMin(arr);
-}
+  return this._arrayMin();
+};
 
-// fakeLastIndexOf function
-
-function fakeLastIndexOf(arr, element) {
-  for (let i = arr.length - 1; i >= 0; i--) {
-    if (arr[i] === element) {
+// _findIndex method
+Array.prototype._findIndex = function(callback) {
+  for (var i = 0; i < array.length; i += 1) {
+    if (callback(array[i])) {
       return i;
     }
   }
   return -1;
 }
 
+// fakeLastIndexOf function
+
+Array.prototype._lastIndexOf = function(element) {
+  for (let i = this.length - 1; i >= 0; i--) {
+    if (this[i] === element) {
+      return i;
+    }
+  }
+  return -1;
+};
 

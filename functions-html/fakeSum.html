@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>fakeEvery</title>
+    <title>fakeSum</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="../app.js"></script>
     <script
@@ -25,7 +25,7 @@
   </head>
   <body>
     <header id="header" class="header">
-      <h1 class="title">Funcion fakeIncludes()</h1>
+      <h1 class="title">Funcion fakeReduce()</h1>
     </header>
     <nav class="nav-bar">
       <h3 class="leftTitle">Ver tambien</h3>
@@ -46,13 +46,13 @@
           <a href="fakeFind.html" class="link-item">fakeFind</a>
         </li>
         <li class="list-item">
+          <a href="fakeIncludes.html" class="link-item">fakeIncludes</a>
+        </li>
+        <li class="list-item">
           <a href="fakeMap.html" class="link-item">fakeMap</a>
         </li>
         <li class="list-item">
           <a href="fakeFilter.html" class="link-item">fakeFilter</a>
-        </li>
-        <li class="list-item">
-          <a href="fakeReduce.html" class="link-item">fakeReduce</a>
         </li>
         <li class="list-item">
           <a href="fakeIndexOf.html" class="link-item">fakeIndexOf</a>
@@ -77,55 +77,43 @@
     <main class="content">
       <section class="principal">
         <p>
-          La función includes() determina si una matriz incluye un determinado
-          elemento, devuelve true o false según corresponda. Utiliza el
-          algoritmo sameValueZero para determinar si se encuentra el elemento
-          dado.
+          La función fakeSum() calcula la suma de los elementos de un array.
         </p>
         <h2 class="subtitle">Demo</h2>
         <pre>
           <code>
-                var array1 = [1, 2, 3];
-
-                console.log(fakeIncludes(array1, 2));
-                // expected output: true
-
-                var pets = ['cat', 'dog', 'bat'];
-
-                console.log(fakeIncludes(pets,'cat'));
-                // expected output: true
-
-                console.log(fakeIncludes(pets,'at'));
-                // expected output: false
+            function fakeSum(arr) {
+                let total = fakeReduce(arr,function(a, b) {
+                    return a + b;
+                  },
+                  0
+                );
+                return total;
+              }
            </code>
         </pre>
       </section>
       <section class="sintaxis">
         <h2 class="subtitle">Sintaxis</h2>
-        <p>fakeIncludes(array, searchElement</p>
+        <p>fakeSum([arr]);</p>
         <dl>
           <dt>Parámetros</dt>
           <dd>array</dd>
-          <dd>El array que la funcion recorrera</dd>
+          <dd>El array para iterar.</dd>
         </dl>
-        <dl>
-          <dt>searchElement</dt>
-          <dd>El elemento a buscar.</dd>
-        </dl>
+        <h2 class="subtitle">Descripción</h2>
+        <p>
+          fakeSum ejecuta la función una vez por cada elemento presente en el
+          array.
+        </p>
       </section>
       <section class="examples">
         <h2 class="subtitle">Ejemplos</h2>
-        <p>Evaluar si los numeros del array cumplen con la condición</p>
+        <p>Suma de elementos de un array</p>
         <pre>
             <code>
-                var numbers = [1, 2, 3];
-                fakeIncludes(numbers, 2);     // true
-                fakeIncludes(numbers, 4);     // false
-                fakeIncludes(numbers, (3, 3));  // false
-                fakeIncludes(numbers, (3, -1)); // true
-                
-                var nanarray = [1, 2, NaN];
-                fakeIncludes(nanarray, NaN); // true
+                fakeSum([4, 2, 8, 6]);
+                //return 20;
             </code>
         </pre>
       </section>

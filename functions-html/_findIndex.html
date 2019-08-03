@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>fakeEvery</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../app.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"
+    ></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/dracula.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inconsolata:700|Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header" class="header">
+      <h1 class="title">fakeFindIndex()</h1>
+    </header>
+     <nav class="nav-bar">
+      <h3 class="leftTitle">Array metodos</h3>
+      <ul class="list-function">
+        <li class="list-item">
+          <a href="../index.html" class="link-item">Inicio</a>
+        </li>
+        <li class="list-item">
+          <a href="forEach.html" class="link-item">_forEach</a>
+        </li>
+        <li class="list-item">
+          <a href="some.html" class="link-item">_some</a>
+        </li>
+        <li class="list-item">
+          <a href="every.html" class="link-item">_every</a>
+        </li>
+        <li class="list-item">
+          <a href="find.html" class="link-item">_find</a>
+        </li>
+        <li class="list-item">
+          <a href="includes.html" class="link-item">_includes</a>
+        </li>
+        <li class="list-item">
+          <a href="map.html" class="link-item">_map</a>
+        </li>
+        <li class="list-item">
+          <a href="filter.html" class="link-item">_filter</a>
+        </li>
+        <li class="list-item">
+          <a href="reduce.html" class="link-item">_reduce</a>
+        </li>
+        <li class="list-item">
+          <a href="indexOf.html" class="link-item">_indexOf</a>
+        </li>
+        <li class="list-item">
+          <a href="lastIndexOf.html" class="link-item">fakeIndexOf</a>
+        </li>
+        <li class="list-item">
+          <a href="union.html" class="link-item">_union</a>
+        </li>
+        <li class="list-item">
+          <a href="sum.html" class="link-item">_sum</a>
+        </li>
+        <li class="list-item">
+          <a href="arrayMax.html" class="link-item">_arrayMax</a>
+        </li>
+        <li class="list-item">
+          <a href="arrayMin.html" class="link-item">_arrayMin</a>
+        </li>
+        <li class="list-item">
+          <a href="isEqual.html" class="link-item">_isEqual</a>
+        </li>
+        <li class="list-item">
+          <a href="concat.html" class="link-item">_concat</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="content">
+      <section class="principal">
+        <h1>_findIndex()</h1>
+        <p>
+          El metodo _findIndex() devuelve el índice del primer elemento de
+          un array que cumpla con la función de prueba proporcionada. En caso
+          contrario devuelve -1.
+        </p>
+        <h2 class="subtitle">Demo</h2>
+        <pre>
+          <code>
+            Array.prototype._findIndex = function(callback) {
+                  for (var i = 0; i < array.length; i += 1) {
+                    if (callback(array[i])) {
+                       return i;
+                    }
+                  }
+               return -1;
+            }
+           </code>
+        </pre>
+      </section>
+      <section class="sintaxis">
+        <dl>
+          <dt>Parámetros</dt>
+        </dl>
+        <dl>
+          <dt>callback</dt>
+          <dd>La funcion que se ejecutara para cada elemento del array</dd>
+          <dd>
+            <ul>
+              <li><p>elemento</p></li>
+            </ul>
+          </dd>
+          <dd>El elemento que sera procesado por la funcion callback</dd>
+        </dl>
+        <h2 class="subtitle">Descripcion</h2>
+        <p>
+          El metodo _findIndex ejecuta la función de callback una vez por
+          cada índice del array 0..length-1 (incluido) hasta que encuentre uno
+          donde callback devuelva un valor verdadero (un valor que fuerce un
+          true). Si dicho elemento es encontrado, fakeFindIndex inmediatamente
+          devuelve el índice de esa iteración. Si la función callback nunca
+          devuelve un valor verdadero o el tamaño del array es 0, findIndex
+          devuelve -1. A diferencia de otros métodos de arrays como Array#some,
+          en arrays dispersos la función callback es llamada incluso en índices
+          de entradas que no están presentes en el array.
+        </p>
+      </section>
+      <section class="examples">
+        <h2 class="subtitle">Ejemplos</h2>
+        <p>
+          Encontrar el primer elemento del array que cumpla con la condición
+        </p>
+        <pre><code>_findIndex([2, 4, -2, 5, -10, 7],x => x > 3);//2</code></pre>
+        <p>En caso de no encontrar el elemento</p>
+        <pre><code>_findIndex([2, 4, -2, 5, -10, 7],x => x > 30);//-1</code></pre>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="copyright">
+        Copyright 2019 fakeTeam | Todos los derechos reservados
+      </p>
+      <a href="#header">Volver al inicio</a>
+    </footer>
+  </body>
+</html>
