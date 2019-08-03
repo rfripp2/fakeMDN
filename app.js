@@ -182,8 +182,8 @@ Array.prototype._arrayMin = function() {
 
 // _findIndex method
 Array.prototype._findIndex = function(callback) {
-  for (var i = 0; i < array.length; i += 1) {
-    if (callback(array[i])) {
+  for (var i = 0; i < this.length; i += 1) {
+    if (callback(this[i])) {
       return i;
     }
   }
