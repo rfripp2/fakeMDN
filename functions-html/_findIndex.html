@@ -85,33 +85,29 @@
     </nav>
     <main class="content">
       <section class="principal">
-        <h1>Funcion fakeFindIndex()</h1>
+        <h1>_findIndex()</h1>
         <p>
-          La funcion fakeFindIndex() devuelve el índice del primer elemento de
+          El metodo _findIndex() devuelve el índice del primer elemento de
           un array que cumpla con la función de prueba proporcionada. En caso
           contrario devuelve -1.
         </p>
         <h2 class="subtitle">Demo</h2>
         <pre>
           <code>
-            function fakeFindIndex(array, callback) {
-                for(var i = 0; i < array.length; i += 1) {
-                    if(callback(array[i])) {
-                        return i;
+            Array.prototype._findIndex = function(callback) {
+                  for (var i = 0; i < array.length; i += 1) {
+                    if (callback(array[i])) {
+                       return i;
                     }
-                }
-                return -1;
+                  }
+               return -1;
             }
            </code>
         </pre>
       </section>
       <section class="sintaxis">
-        <h2 class="subtitle">Sintaxis</h2>
-        <p>fakeEvery(array,callback(elemento))</p>
         <dl>
           <dt>Parámetros</dt>
-          <dd>array</dd>
-          <dd>El array que la funcion recorrera</dd>
         </dl>
         <dl>
           <dt>callback</dt>
@@ -125,7 +121,7 @@
         </dl>
         <h2 class="subtitle">Descripcion</h2>
         <p>
-          La funcion fakeFindIndex ejecuta la función de callback una vez por
+          El metodo _findIndex ejecuta la función de callback una vez por
           cada índice del array 0..length-1 (incluido) hasta que encuentre uno
           donde callback devuelva un valor verdadero (un valor que fuerce un
           true). Si dicho elemento es encontrado, fakeFindIndex inmediatamente
@@ -141,9 +137,9 @@
         <p>
           Encontrar el primer elemento del array que cumpla con la condición
         </p>
-        <pre><code>fakeFindIndex([2, 4, -2, 5, -10, 7],x => x > 3);//2</code></pre>
+        <pre><code>_findIndex([2, 4, -2, 5, -10, 7],x => x > 3);//2</code></pre>
         <p>En caso de no encontrar el elemento</p>
-        <pre><code>fakeFindIndex([2, 4, -2, 5, -10, 7],x => x > 30);//-1</code></pre>
+        <pre><code>_findIndex([2, 4, -2, 5, -10, 7],x => x > 30);//-1</code></pre>
       </section>
     </main>
     <footer class="footer">
