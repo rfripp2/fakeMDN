@@ -192,14 +192,14 @@ function fakeFindIndex(array, callback) {
 
 // fakeLastIndexOf function
 
-function fakeLastIndexOf(arr, element) {
-  for (let i = arr.length - 1; i >= 0; i--) {
-    if (arr[i] === element) {
+Array.prototype._lastIndexOf = function(element) {
+  for (let i = this.length - 1; i >= 0; i--) {
+    if (this[i] === element) {
       return i;
     }
   }
   return -1;
-}
+};
 
 // fakeAreEqual function
 
