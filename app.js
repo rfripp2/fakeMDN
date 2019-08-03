@@ -180,8 +180,8 @@ Array.prototype._arrayMin = function() {
   return this._arrayMin();
 };
 
-
-function fakeFindIndex(array, callback) {
+// _findIndex method
+Array.prototype._findIndex = function(callback) {
   for (var i = 0; i < array.length; i += 1) {
     if (callback(array[i])) {
       return i;
