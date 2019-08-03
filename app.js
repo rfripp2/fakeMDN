@@ -1,4 +1,4 @@
-//_every
+//_every method
 
 Array.prototype._every = function(callback) {
   for (const element of this) {
@@ -64,16 +64,16 @@ function _find(callback) {
 }
 
 
-//function _map()
+// _map method
 
-Array.prototype._map = _map;
-function _map(callback) {
+Array.prototype._map = function (callback) {
   const mappedArray = [];
   this._forEach(element => {
     mappedArray.push(callback(element));
   });
   return mappedArray;
 }
+
 
 
 // _intersection method
