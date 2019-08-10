@@ -25,59 +25,73 @@
   </head>
   <body>
     <header id="header" class="header">
-      <h1 class="title">Funcion fakeIndexOf()</h1>
+      <h1 class="title">_indexOf()</h1>
     </header>
     <nav class="nav-bar">
-      <h3 class="leftTitle">Ver tambien</h3>
+      <h3 class="leftTitle">Array metodos</h3>
       <ul class="list-function">
         <li class="list-item">
           <a href="../index.html" class="link-item">Inicio</a>
         </li>
         <li class="list-item">
-          <a href="fakeForEach.html" class="link-item">fakeForEach</a>
+          <a href="arrayMax.html" class="link-item">Array.prototype._arrayMax</a>
         </li>
         <li class="list-item">
-          <a href="fakeSome.html" class="link-item">fakeSome</a>
+          <a href="arrayMin.html" class="link-item">Array.prototype._arrayMin</a>
         </li>
         <li class="list-item">
-          <a href="fakeEvery.html" class="link-item">fakeEvery</a>
+          <a href="concat.html" class="link-item">Array.prototype._concat</a>
         </li>
         <li class="list-item">
-          <a href="fakeFind.html" class="link-item">fakeFind</a>
+          <a href="every.html" class="link-item">Array.prototype._every</a>
         </li>
         <li class="list-item">
-          <a href="fakeIncludes.html" class="link-item">fakeIncludes</a>
+          <a href="filter.html" class="link-item">Array.prototype._filter</a>
         </li>
         <li class="list-item">
-          <a href="fakeMap.html" class="link-item">fakeMap</a>
+          <a href="find.html" class="link-item">Array.prototype._find</a>
         </li>
         <li class="list-item">
-          <a href="fakeFilter.html" class="link-item">fakeFilter</a>
+          <a href="forEach.html" class="link-item">Array.prototype._forEach</a>
+        </li>
+       
+        <li class="list-item">
+          <a href="includes.html" class="link-item">Array.prototype._includes</a>
         </li>
         <li class="list-item">
-          <a href="fakeReduce.html" class="link-item">fakeReduce</a>
+          <a href="indexOf.html" class="link-item">Array.prototype._indexOf</a>
+        </li>
+          <li>
+          <a href="intersection.html">Array.prototype._intersection</a>
         </li>
         <li class="list-item">
-          <a href="fakeIndexOfRecursive.html" class="link-item"
-            >fakeIndexOfRecursive</a
-          >
+          <a href="isEqual.html" class="link-item">Array.prototype._isEqual</a>
         </li>
         <li class="list-item">
-          <a href="fakeIntersection.html" class="link-item">fakeIntersection</a>
+          <a href="lastIndexOf.html" class="link-item">Array.prototype._lastIndexOf</a>
         </li>
         <li class="list-item">
-          <a href="fakeUnion.html" class="link-item">fakeUnion</a>
+          <a href="map.html" class="link-item">Array.prototype._map</a>
         </li>
         <li class="list-item">
-          <a href="fakeSum.html" class="link-item">fakeSum</a>
+          <a href="reduce.html" class="link-item">Array.prototype._reduce</a>
         </li>
+         <li class="list-item">
+          <a href="some.html" class="link-item">Array.prototype._some</a>
+        </li>
+        <li class="list-item">
+          <a href="sum.html" class="link-item">Array.prototype._sum</a>
+        </li>
+         <li class="list-item">
+          <a href="union.html" class="link-item">Array.prototype._union</a>
+        </li>        
       </ul>
     </nav>
 
     <main class="content">
       <section class="principal">
         <p>
-          El metod _indexOf() retorna el primer índice en el que se puede
+          El metodo _indexOf() retorna el primer índice en el que se puede
           encontrar un elemento dado en el array, ó retorna -1 si el elemento no
           esta presente.
         </p>
@@ -122,10 +136,10 @@
         <pre>
             <code>
                 function updateVegetablesCollection (veggies, veggie) {
-                    if (fakeIndexOf(veggies veggie)) === -1) {
+                    if (indexOf(veggies veggie)) === -1) {
                     veggies.push(veggie);
                     console.log('La nueva colección de vegetales es: ' + veggies);
-                    } else if (fakeIndexOf(veggies, veggie)) > -1) {
+                    } else if (indexOf(veggies, veggie)) > -1) {
                     console.log(veggie + ' ya existe en la colección de verduras.');
                     }
                 }
